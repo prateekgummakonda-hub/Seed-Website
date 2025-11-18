@@ -2,396 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Seed Diversity Project</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    :root {
-      --bg: #f4f7f2;
-      --bg-alt: #e4efe2;
-      --primary: #2f855a;
-      --primary-dark: #276749;
-      --accent: #f6e05e;
-      --text-main: #123024;
-      --text-muted: #4a6354;
-      --card: #ffffff;
-      --radius: 14px;
-      --shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    /* NAVBAR */
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(10px);
-      background: rgba(244, 247, 242, 0.95);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 18px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: radial-gradient(circle at top, #9ae6b4, #2f855a);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 20px;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-text span:first-child {
-      font-weight: 700;
-      font-size: 16px;
-    }
-
-    .brand-text span:last-child {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      font-size: 13px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-muted);
-      padding: 5px 10px;
-      border-radius: 999px;
-      transition: 0.2s;
-    }
-
-    .nav-links a:hover {
-      background: var(--primary);
-      color: white;
-    }
-
-    /* LAYOUT */
-
-    .wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px 16px 40px;
-    }
-
-    /* HERO */
-
-    #home {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
-      gap: 24px;
-      align-items: center;
-      margin-top: 10px;
-      margin-bottom: 30px;
-    }
-
-    .hero-text h1 {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
-
-    .hero-text p {
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      font-size: 14px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: #ebf8ff;
-      color: #2b6cb0;
-      font-size: 11px;
-      margin-bottom: 8px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 6px;
-    }
-
-    .btn-main,
-    .btn-secondary {
-      border-radius: 999px;
-      padding: 8px 16px;
-      font-size: 14px;
-      border: none;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .btn-main {
-      background: var(--primary);
-      color: white;
-    }
-
-    .btn-main:hover {
-      background: var(--primary-dark);
-    }
-
-    .btn-secondary {
-      background: white;
-      color: var(--primary-dark);
-      border: 1px solid rgba(0, 0, 0, 0.08);
-    }
-
-    .btn-secondary:hover {
-      background: #edf2f7;
-    }
-
-    .hero-card {
-      background: var(--card);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      padding: 18px 18px 14px;
-    }
-
-    .hero-card h2 {
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    .hero-card p {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      font-size: 11px;
-    }
-
-    .stat {
-      text-align: center;
-      padding: 6px;
-      border-radius: 10px;
-      background: var(--bg-alt);
-    }
-
-    .stat span:first-child {
-      display: block;
-      font-weight: 700;
-      font-size: 18px;
-    }
-
-    /* SECTIONS */
-
-    section {
-      margin-top: 36px;
-    }
-
-    section h2 {
-      font-size: 22px;
-      margin-bottom: 6px;
-    }
-
-    .section-intro {
-      color: var(--text-muted);
-      font-size: 14px;
-      margin-bottom: 14px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 14px 14px 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      font-size: 14px;
-    }
-
-    .card h3 {
-      margin-bottom: 6px;
-      font-size: 16px;
-    }
-
-    /* GALLERY TAGS */
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .chip {
-      border: none;
-      background: #edf2f7;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      cursor: pointer;
-      color: #2d3748;
-    }
-
-    .chip.active {
-      background: var(--primary);
-      color: white;
-    }
-
-    .seed-list {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .seed-tag {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 999px;
-      font-size: 11px;
-      background: #e6fffa;
-      color: #285e61;
-      margin-bottom: 4px;
-    }
-
-    /* TIMELINE */
-
-    .timeline {
-      border-left: 3px solid #c6f6d5;
-      padding-left: 14px;
-      margin-top: 8px;
-    }
-
-    .step {
-      margin-bottom: 10px;
-      position: relative;
-      padding-left: 4px;
-    }
-
-    .step::before {
-      content: "";
-      position: absolute;
-      left: -15px;
-      top: 4px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--primary);
-    }
-
-    .step-title {
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    .step-desc {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    /* CALLOUT */
-
-    .callout {
-      margin-top: 16px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      background: #fefcbf;
-      border: 1px dashed #d69e2e;
-      font-size: 13px;
-    }
-
-    .callout strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      border-top: 1px solid rgba(0, 0, 0, 0.05);
-      text-align: center;
-      padding: 14px;
-      font-size: 12px;
-      color: var(--text-muted);
-      background: #f0f4f1;
-      margin-top: 30px;
-    }
-
-    footer span {
-      font-weight: 600;
-      color: var(--primary-dark);
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      #home {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .grid-3,
-      .seed-list {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .grid-2 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
-    }
-  </style>
+  <title>Seed Diversity – Home</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- NAVBAR -->
   <header class="navbar">
     <div class="brand">
       <div class="brand-logo">🌱</div>
@@ -401,47 +15,73 @@
       </div>
     </div>
     <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#what">What is it?</a>
-      <a href="#why">Why it matters</a>
-      <a href="#threats">Threats</a>
-      <a href="#actions">What we can do</a>
-      <a href="#project">My project</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="what-is-seed-diversity.html">What is it?</a>
+      <a href="why-it-matters.html">Why it matters</a>
+      <a href="threats.html">Threats</a>
+      <a href="how-we-can-help.html">Actions</a>
+      <a href="my-project.html">My project</a>
     </nav>
   </header>
 
   <main class="wrapper">
-    <!-- HERO -->
-    <section id="home">
-      <div class="hero-text">
-        <div class="pill">
-          🌾 Seed Diversity • Food, Climate, Culture
-        </div>
-        <h1>Protecting the Invisible Library of Seeds</h1>
-        <p>
-          Every seed carries unique genes, colours and flavours. When we lose
-          seed diversity, we lose future options for food security, climate
-          resilience and culture.
+    <section class="hero">
+      <div class="hero-main">
+        <p class="tagline">Food • Climate • Culture</p>
+        <h1 class="page-title">Welcome to my Seed Diversity Project</h1>
+        <p class="page-subtitle">
+          This website explains what seed diversity is, why it matters for our future,
+          and how schools and communities can help protect it.
         </p>
-        <div class="hero-buttons">
-          <button class="btn-main" onclick="scrollToSection('why')">
-            Start learning
-          </button>
-          <button class="btn-secondary" onclick="scrollToSection('project')">
-            See my project work
-          </button>
+        <div class="btn-row">
+          <a href="what-is-seed-diversity.html" class="btn btn-main">Start learning</a>
+          <a href="my-project.html" class="btn btn-ghost">See my project work</a>
         </div>
       </div>
 
-      <aside class="hero-card">
-        <h2>About this website</h2>
-        <p>
-          This website was created as a school project to explain what seed
-          diversity is, why it is important, and realistic actions students and
-          schools can take to protect it.
-        </p>
-        <div class="hero-stats">
-          <div class="stat">
-            <span>3</span>
-            <span>Key sections</span>
-          </div>
+      <aside class="hero-side">
+        <h2>Quick facts</h2>
+        <ul>
+          <li>Many traditional seed varieties have disappeared in the last 100 years.</li>
+          <li>Different seeds can survive different climates, diseases and soils.</li>
+          <li>Seed diversity connects science, environment, culture and food.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section">
+      <h2>What you will find on this site</h2>
+      <div class="grid-3">
+        <article class="card">
+          <h3>What is seed diversity?</h3>
+          <p>
+            A simple explanation of genetic diversity inside crops, with examples
+            of different seeds and what makes them special.
+          </p>
+          <a href="what-is-seed-diversity.html" class="btn btn-ghost" style="margin-top: 8px;">Open page</a>
+        </article>
+        <article class="card">
+          <h3>Why it matters</h3>
+          <p>
+            How seed diversity helps with food security, climate resilience and
+            cultural heritage across the world.
+          </p>
+          <a href="why-it-matters.html" class="btn btn-ghost" style="margin-top: 8px;">Open page</a>
+        </article>
+        <article class="card">
+          <h3>Threats & Actions</h3>
+          <p>
+            The main threats to seed diversity and realistic actions that
+            schools, communities and students can take.
+          </p>
+          <a href="threats.html" class="btn btn-ghost" style="margin-top: 8px;">Open threats page</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Seed Diversity Project • Created for school • <span>Student Website</span>
+  </footer>
+</body>
+</html>
