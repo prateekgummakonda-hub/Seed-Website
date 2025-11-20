@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seed Tools – Gallery, Compare & Analyze</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand">
+      <div class="brand-logo">🌱</div>
+      <div class="brand-text">
+        <span>Seed Diversity</span>
+        <span>School Project Website</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="what-is-seed-diversity.html">What is it?</a>
+      <a href="why-it-matters.html">Why it matters</a>
+      <a href="threats.html">Threats</a>
+      <a href="how-we-can-help.html">Actions</a>
+      <a href="my-project.html">My project</a>
+      <a href="seed-tools.html" class="active">Seed tools</a>
+      <a href="store-locator.html">Store locator</a>
+    </nav>
+  </header>
+
+  <main class="wrapper">
+    <h1 class="page-title">Seed Tools</h1>
+    <p class="page-subtitle">
+      This page lets you explore seeds using an image gallery, filters, a
+      comparison tool and a simple image analysis section.
+    </p>
+
+    <!-- GALLERY + FILTERS -->
+    <section class="section">
+      <h2>Seed Gallery with Filters</h2>
+      <p class="section-intro">
+        Use the filters to explore different types of seeds. Images are
+        representative and taken from free image libraries (Unsplash/Pexels).
+      </p>
+
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="cereal">Cereals</button>
+        <button class="filter-btn" data-filter="legume">Legumes</button>
+        <button class="filter-btn" data-filter="vegetable">Vegetables</button>
+        <button class="filter-btn" data-filter="climate-hot">Heat tolerant</button>
+        <button class="filter-btn" data-filter="climate-wet">Flood tolerant</button>
+      </div>
+
+      <div class="seed-grid" id="seed-grid">
+        <!-- Rice -->
+        <article
+          class="card seed-card"
+          data-type="cereal climate-wet"
+        >
+          <span class="seed-tag">Cereal • Flood tolerant</span>
+          <img
+            src="https://images.pexels.com/photos/164504/pexels-photo-164504.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Rice grains"
+          />
+          <h3>Traditional Flood Rice</h3>
+          <p>
+            A rice variety adapted to flooded fields. Useful in regions with
+            heavy monsoon rains.
+          </p>
+        </article>
+
+        <!-- Drought millet -->
+        <article
+          class="card seed-card"
+          data-type="cereal climate-hot"
+        >
+          <span class="seed-tag">Cereal • Heat tolerant</span>
+          <img
+            src="https://images.pexels.com/photos/60612/grain-corn-seed-maize-60612.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Millet-like seeds"
+          />
+          <h3>Drought Hardy Millet</h3>
+          <p>
+            Small grains that can survive poor soils and low rainfall, important
+            for dry regions.
+          </p>
+        </article>
+
+        <!-- Beans -->
+        <article
+          class="card seed-card"
+          data-type="legume climate-hot"
+        >
+          <span class="seed-tag">Legume • Heat tolerant</span>
+          <img
+            src="https://images.pexels.com/photos/143133/beans-seed-garden-seeds-vegetables-143133.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Beans"
+          />
+          <h3>Speckled Beans</h3>
+          <p>
+            Colourful beans that fix nitrogen in the soil and give protein in
+            many traditional dishes.
+          </p>
+        </article>
+
+        <!-- Chickpeas -->
+        <article
+          class="card seed-card"
+          data-type="legume climate-hot"
+        >
+          <span class="seed-tag">Legume • Heat tolerant</span>
+          <img
+            src="https://images.pexels.com/photos/4198023/pexels-photo-4198023.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Chickpeas"
+          />
+          <h3>Desi Chickpeas</h3>
+          <p>
+            Small, hardy chickpeas well suited to semi-arid climates like parts
+            of Telangana.
+          </p>
+        </article>
+
+        <!-- Tomato -->
+        <article
+          class="card seed-card"
+          data-type="vegetable climate-wet"
+        >
+          <span class="seed-tag">Vegetable • Humid climate</span>
+          <img
+            src="https://images.pexels.com/photos/8390/food-wood-tomatoes.jpg?auto=compress&cs=tinysrgb&w=800"
+            alt="Tomatoes"
+          />
+          <h3>Heirloom Tomatoes</h3>
+          <p>
+            Old tomato varieties with strong flavour and diverse colours,
+            adapted to specific local conditions.
+          </p>
+        </article>
+
+        <!-- Brinjal -->
+        <article
+          class="card seed-card"
+          data-type="vegetable climate-hot"
+        >
+          <span class="seed-tag">Vegetable • Heat tolerant</span>
+          <img
+            src="https://images.pexels.com/photos/5945655/pexels-photo-5945655.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Eggplant"
+          />
+          <h3>Local Brinjal</h3>
+          <p>
+            Traditional eggplant varieties commonly grown around Hyderabad, with
+            different shapes and colours.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- COMPARE SEEDS -->
+    <section class="section">
+      <h2>Compare Seeds</h2>
+      <p class="section-intro">
+        Choose two seed types to compare basic traits like growth time, climate
+        tolerance and typical use.
+      </p>
+
+      <div class="compare-wrapper">
+        <div class="compare-select">
+          <label for="seedA">Seed A</label>
+          <select id="seedA">
+            <option value="rice">Flood Rice</option>
+            <option value="millet">Millet</option>
+            <option value="beans">Speckled Beans</option>
+            <option value="chickpea">Chickpeas</option>
+            <option value="tomato">Heirloom Tomato</option>
+            <option value="brinjal">Brinjal</option>
+          </select>
+
+          <label for="seedB">Seed B</label>
+          <select id="seedB">
+            <option value="millet">Millet</option>
+            <option value="rice">Flood Rice</option>
+            <option value="beans">Speckled Beans</option>
+            <option value="chickpea">Chickpeas</option>
+            <option value="tomato">Heirloom Tomato</option>
+            <option value="brinjal">Brinjal</option>
+          </select>
+        </div>
+
+        <div class="compare-columns">
+          <div class="compare-box" id="boxA"></div>
+          <div class="compare-box" id="boxB"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMAGE ANALYZER -->
+    <section class="section">
+      <h2>Simple Image Analyzer (Prototype)</h2>
+      <p class="section-intro">
+        This tool does a very basic analysis of an uploaded seed image by
+        estimating the dominant colour. It is NOT real AI, but it demonstrates
+        how digital tools can support seed documentation.
+      </p>
+
+      <div class="image-analyze">
+        <div>
+          <p><strong>1.</strong> Upload a clear photo of seeds on a plain background.</p>
+          <input type="file" id="imageInput" accept="image/*" />
+        </div>
+
+        <div class="image-preview-box">
+          <div id="previewArea">
+            <p>No image uploaded yet.</p>
+          </div>
+          <div id="analysisArea" class="analysis-result"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Seed Diversity Project • Interactive seed tools
+  </footer>
+
+  <script>
+    /* ===== GALLERY FILTERING ===== */
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const seedCards = document.querySelectorAll(".seed-card");
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filter = btn.getAttribute("data-filter");
+
+        filterButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        seedCards.forEach((card) => {
+          const types = card.getAttribute("data-type").split(" ");
+          if (filter === "all" || types.includes(filter)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+
+    /* ===== COMPARE SEEDS ===== */
+    const seedInfo = {
+      rice: {
+        name: "Traditional Flood Rice",
+        climate: "Flooded / high rainfall",
+        growth: "Medium season (120–150 days)",
+        use: "Staple food; can survive waterlogged fields",
+        notes: "Important for monsoon regions and climate resilience."
+      },
+      millet: {
+        name: "Millet (drought hardy)",
+        climate: "Dry, semi-arid",
+        growth: "Short season (90–110 days)",
+        use: "Staple or mixed with other grains; very hardy",
+        notes: "Valuable when rainfall is low or unpredictable."
+      },
+      beans: {
+        name: "Speckled Beans",
+        climate: "Warm, moderate rainfall",
+        growth: "Medium season",
+        use: "Protein-rich food; soil nitrogen fixation",
+        notes: "Improves soil health and diet quality."
+      },
+      chickpea: {
+        name: "Desi Chickpeas",
+        climate: "Semi-arid winter crop",
+        growth: "Medium season",
+        use: "Dal, snacks, flours",
+        notes: "Important pulse crop in India."
+      },
+      tomato: {
+        name: "Heirloom Tomato",
+        climate: "Warm, frost-free",
+        growth: "Short to medium season",
+        use: "Fresh eating, sauces",
+        notes: "Shows diversity in colour, shape and taste."
+      },
+      brinjal: {
+        name: "Local Brinjal (Eggplant)",
+        climate: "Warm season",
+        growth: "Medium season",
+        use: "Vegetable in many dishes",
+        notes: "Many local varieties around Hyderabad."
+      }
+    };
+
+    const seedASelect = document.getElementById("seedA");
+    const seedBSelect = document.getElementById("seedB");
+    const boxA = document.getElementById("boxA");
+    const boxB = document.getElementById("boxB");
+
+    function renderSeedBox(selectElement, boxElement) {
+      const key = selectElement.value;
+      const data = seedInfo[key];
+      boxElement.innerHTML = `
+        <h3>${data.name}</h3>
+        <p><strong>Climate:</strong> ${data.climate}</p>
+        <p><strong>Growth time:</strong> ${data.growth}</p>
+        <p><strong>Main use:</strong> ${data.use}</p>
+        <p><strong>Notes:</strong> ${data.notes}</p>
+      `;
+    }
+
+    renderSeedBox(seedASelect, boxA);
+    renderSeedBox(seedBSelect, boxB);
+
+    seedASelect.addEventListener("change", () => renderSeedBox(seedASelect, boxA));
+    seedBSelect.addEventListener("change", () => renderSeedBox(seedBSelect, boxB));
+
+    /* ===== SIMPLE IMAGE ANALYZER ===== */
+    const imageInput = document.getElementById("imageInput");
+    const previewArea = document.getElementById("previewArea");
+    const analysisArea = document.getElementById("analysisArea");
+
+    imageInput.addEventListener("change", (event) => {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const img = new Image();
+      img.onload = () => {
+        // Show preview
+        previewArea.innerHTML = "";
+        img.style.maxWidth = "100%";
+        img.style.borderRadius = "8px";
+        previewArea.appendChild(img);
+
+        // Draw to canvas to get average colour
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        const width = 80;
+        const height = 80;
+        canvas.width = width;
+        canvas.height = height;
+        ctx.drawImage(img, 0, 0, width, height);
+
+        let r = 0, g = 0, b = 0, count = 0;
+        const data = ctx.getImageData(0, 0, width, height).data;
+        for (let i = 0; i < data.length; i += 4) {
+          r += data[i];
+          g += data[i + 1];
+          b += data[i + 2];
+          count++;
+        }
+        r = Math.round(r / count);
+        g = Math.round(g / count);
+        b = Math.round(b / count);
+
+        let guess = "mixed seeds / uncertain type";
+        if (g > r && g > b) {
+          guess = "likely plant/leaf-rich image (more green)";
+        } else if (r > g && r > b) {
+          guess = "likely reddish seeds or fruit";
+        } else if (b > r && b > g) {
+          guess = "contains more bluish / dark tones";
+        } else if (r === g && g === b) {
+          guess = "neutral / brownish seeds or soil";
+        }
+
+        analysisArea.innerHTML = `
+          <p><strong>Average colour (RGB):</strong> ${r}, ${g}, ${b}</p>
+          <p><strong>Simple interpretation:</strong> ${guess}</p>
+          <p><em>Note:</em> This is a prototype tool. It does not identify exact
+          varieties but shows how basic image processing can support seed
+          documentation.</p>
+        `;
+      };
+
+      const url = URL.createObjectURL(file);
+      img.src = url;
+    });
+  </script>
+</body>
+</html>
