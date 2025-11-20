@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seed Store Locator – Hyderabad Prototype</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Leaflet CSS (map library, no key needed) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand">
+      <div class="brand-logo">🌱</div>
+      <div class="brand-text">
+        <span>Seed Diversity</span>
+        <span>School Project Website</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="what-is-seed-diversity.html">What is it?</a>
+      <a href="why-it-matters.html">Why it matters</a>
+      <a href="threats.html">Threats</a>
+      <a href="how-we-can-help.html">Actions</a>
+      <a href="my-project.html">My project</a>
+      <a href="seed-tools.html">Seed tools</a>
+      <a href="store-locator.html" class="active">Store locator</a>
+    </nav>
+  </header>
+
+  <main class="wrapper">
+    <h1 class="page-title">Seed Store Locator – Hyderabad (Prototype)</h1>
+    <p class="page-subtitle">
+      This interactive map shows a <strong>prototype list</strong> of seed and
+      agriculture stores in the Hyderabad region. In a full version, the
+      locator could be expanded to other cities and states.
+    </p>
+
+    <section class="section">
+      <div class="map-wrapper">
+        <p class="section-intro">
+          <strong>Prototype notice:</strong> This is a school project prototype.
+          For now, the locator only includes a small set of stores in and
+          around Hyderabad to demonstrate how seed access data could be mapped.
+        </p>
+        <div id="map"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How this feature could grow in the future</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>More regions</h3>
+          <p>
+            The same approach could be used to map seed stores, seed banks and
+            community seed libraries across India or globally, helping farmers
+            and students find diverse planting material.
+          </p>
+        </article>
+        <article class="card">
+          <h3>More data layers</h3>
+          <p>
+            Additional information could include which stores carry local
+            varieties, organic seeds, indigenous crops or climate-resilient
+            options, as well as opening times and contact details.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Seed Diversity Project • Hyderabad seed store locator (prototype)
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIJt6vWv7Z1jzDsrwP+U5p3p6m5pLt0="
+    crossorigin=""
+  ></script>
+
+  <script>
+    // Create map centred on Hyderabad
+    const map = L.map("map").setView([17.385, 78.4867], 11);
+
+    // Hybrid modern-green + default style:
+    // Use standard OpenStreetMap tiles, then style markers in green.
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    // Custom green marker icon
+    const greenIcon = L.icon({
+      iconUrl:
+        "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png",
+      shadowUrl:
+        "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+
+    // Example Hyderabad region seed / agri stores (prototype list)
+    const stores = [
+      {
+        name: "Hyderabad Seeds & Fertilizers (Prototype)",
+        lat: 17.392,
+        lng: 78.486,
+        area: "Abids",
+        seeds:
+          "Vegetable seeds, field crops, some local varieties (example data)",
+        hours: "Mon–Sat, 10:00–19:00",
+        note: "General agri-input store used here for demonstration."
+      },
+      {
+        name: "Secunderabad Agro Seeds (Prototype)",
+        lat: 17.439,
+        lng: 78.498,
+        area: "Secunderabad",
+        seeds: "Hybrid and OP seeds, pulses, millets (example data)",
+        hours: "Mon–Sat, 9:30–19:30",
+        note: "Shows how multiple seed types can be listed."
+      },
+      {
+        name: "Kukatpally Seed Centre (Prototype)",
+        lat: 17.493,
+        lng: 78.399,
+        area: "Kukatpally",
+        seeds: "Vegetable packets, paddy, maize (example data)",
+        hours: "Mon–Sun, 10:00–20:00",
+        note: "Could be replaced with real local data in a full project."
+      },
+      {
+        name: "Shamshabad Rural Seed Outlet (Prototype)",
+        lat: 17.256,
+        lng: 78.439,
+        area: "Shamshabad",
+        seeds: "Groundnut, millets, cotton seeds (example data)",
+        hours: "Seasonal timings",
+        note: "Represents access points outside the main city."
+      }
+    ];
+
+    stores.forEach((store) => {
+      const popupHtml = `
+        <strong>${store.name}</strong><br/>
+        Area: ${store.area}<br/>
+        Seeds: ${store.seeds}<br/>
+        Hours: ${store.hours}<br/>
+        <em>${store.note}</em>
+      `;
+      L.marker([store.lat, store.lng], { icon: greenIcon })
+        .addTo(map)
+        .bindPopup(popupHtml);
+    });
+  </script>
+</body>
+</html>
