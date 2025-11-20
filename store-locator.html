@@ -7,7 +7,7 @@
   <!-- Your main site styles -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Leaflet CSS (no integrity, no hassle) -->
+  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
   <style>
@@ -25,10 +25,9 @@
       margin-bottom: 16px;
     }
 
-    /* MAKE SURE THE MAP IS VISIBLE */
     #map {
       width: 100%;
-      height: 500px;              /* key line */
+      height: 500px;
       border-radius: 12px;
       background: #e9f3e6;
       box-shadow: 0 4px 14px rgba(0,0,0,0.08);
@@ -36,7 +35,6 @@
   </style>
 </head>
 <body>
-  <!-- same navbar as other pages -->
   <header class="navbar">
     <div class="brand">
       <div class="brand-logo"></div>
@@ -71,24 +69,20 @@
       A full version would include other states, more seed types, and farmer-focused tools.
     </div>
 
-    <!-- The actual Leaflet map -->
     <div id="map"></div>
   </main>
 
-  <!-- Leaflet JS (again, simple version) -->
+  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
   <script>
-    // 1. Create the map centred on Hyderabad
     const map = L.map("map").setView([17.3850, 78.4867], 12);
 
-    // 2. Add base tiles (OpenStreetMap)
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // 3. Custom green marker icon
     const greenIcon = L.icon({
       iconUrl:
         "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png",
@@ -100,7 +94,6 @@
       shadowSize: [41, 41]
     });
 
-    // 4. Prototype list of Hyderabad stores
     const stores = [
       {
         name: "Hyderabad Seeds & Fertilizers",
@@ -132,7 +125,6 @@
       }
     ];
 
-    // 5. Add markers with popups
     stores.forEach(store => {
       L.marker([store.lat, store.lng], { icon: greenIcon })
         .addTo(map)
