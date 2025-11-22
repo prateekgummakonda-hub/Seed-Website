@@ -87,4 +87,471 @@
       background: #e8f5e9;
       color: #2e7d32;
       border: 1px solid #c5e1a5;
-   
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .compare-grid label {
+      font-size: 12px;
+      color: #455a64;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .compare-grid select {
+      width: 100%;
+      padding: 6px 8px;
+      border-radius: 8px;
+      border: 1px solid #cfd8dc;
+      font-size: 13px;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .compare-table th,
+    .compare-table td {
+      border: 1px solid #e0e0e0;
+      padding: 6px 8px;
+      text-align: left;
+    }
+
+    .compare-table th {
+      background: #f5f5f5;
+      font-weight: 600;
+    }
+
+    .image-analyser {
+      margin-top: 16px;
+      border-top: 1px dashed #cfd8dc;
+      padding-top: 12px;
+    }
+
+    .image-analyser label {
+      font-size: 12px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .image-analyser input[type="file"] {
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    .image-preview {
+      margin-top: 6px;
+      max-width: 100%;
+      max-height: 140px;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .analysis-result {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #455a64;
+    }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="brand">
+    <div class="brand-logo">🌱</div>
+    <div class="brand-text">
+      <span>Seed Diversity</span>
+      <span>School Project Website</span>
+    </div>
+  </div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="what-is-seed-diversity.html">What is it?</a>
+    <a href="why-it-matters.html">Why it matters</a>
+    <a href="threats.html">Threats</a>
+    <a href="how-we-can-help.html">Actions</a>
+    <a href="my-project.html">My project</a>
+    <a href="seed-tools.html" class="active">Seed tools</a>
+    <a href="store-locator.html">Store locator</a>
+  </nav>
+</header>
+
+<main class="wrapper">
+  <h1 class="page-title">Seed Tools</h1>
+  <p class="tools-intro">
+    This page is a prototype. You can:
+    browse a small set of seeds, use simple filters,
+    compare two types side by side, and test a basic colour-based image analyser.
+  </p>
+
+  <section class="section">
+    <div class="tools-layout">
+      <!-- LEFT PANEL: filters + gallery -->
+      <div class="tools-panel">
+        <h2>Seed gallery & filters</h2>
+        <p>Choose filters or search by name to explore the seeds in this prototype list.</p>
+
+        <div class="filter-row">
+          <div>
+            <label for="filterCategory">Seed type</label>
+            <select id="filterCategory">
+              <option value="">All types</option>
+              <option value="grain">Grain / cereal</option>
+              <option value="pulse">Pulse</option>
+              <option value="vegetable">Vegetable</option>
+              <option value="oilseed">Oilseed</option>
+            </select>
+          </div>
+          <div>
+            <label for="filterClimate">Climate fit</label>
+            <select id="filterClimate">
+              <option value="">All climates</option>
+              <option value="dry">Dry / low rainfall</option>
+              <option value="moderate">Moderate</option>
+              <option value="humid">Humid</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filter-row">
+          <div>
+            <label for="filterColour">Seed colour</label>
+            <select id="filterColour">
+              <option value="">Any colour</option>
+              <option value="light">Light / pale</option>
+              <option value="red-brown">Red / brown</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
+          <div>
+            <label for="filterSearch">Search by name</label>
+            <input type="text" id="filterSearch" placeholder="e.g. ragi, black gram" />
+          </div>
+        </div>
+
+        <div class="seed-gallery" id="seedGallery">
+          <!-- cards inserted by JavaScript -->
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL: compare + image analyser -->
+      <div class="tools-panel">
+        <h2>Compare seeds</h2>
+        <p>Select two seeds from the list to see their key traits side by side.</p>
+
+        <div class="compare-grid">
+          <div>
+            <label for="compareA">Seed A</label>
+            <select id="compareA"></select>
+          </div>
+          <div>
+            <label for="compareB">Seed B</label>
+            <select id="compareB"></select>
+          </div>
+        </div>
+
+        <table class="compare-table">
+          <thead>
+          <tr>
+            <th>Trait</th>
+            <th id="colA">Seed A</th>
+            <th id="colB">Seed B</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Type</td>
+            <td id="aType">–</td>
+            <td id="bType">–</td>
+          </tr>
+          <tr>
+            <td>Climate fit</td>
+            <td id="aClimate">–</td>
+            <td id="bClimate">–</td>
+          </tr>
+          <tr>
+            <td>Colour</td>
+            <td id="aColour">–</td>
+            <td id="bColour">–</td>
+          </tr>
+          <tr>
+            <td>Notes</td>
+            <td id="aNotes">–</td>
+            <td id="bNotes">–</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <div class="image-analyser">
+          <h2>Image colour analyser (prototype)</h2>
+          <p>
+            Upload a seed photo. The tool finds an average colour and guesses a simple category.
+            This is only a demo – it does not identify real varieties.
+          </p>
+
+          <label for="imageInput">Upload image</label>
+          <input type="file" id="imageInput" accept="image/*" />
+
+          <img id="previewImage" class="image-preview" alt="" />
+
+          <div id="analysisArea" class="analysis-result"></div>
+          <canvas id="hiddenCanvas" style="display:none;"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Seed Diversity Project • Created for school • <span>Student Website</span>
+</footer>
+
+<!-- ========= JavaScript for seed tools ========= -->
+<script>
+  // Simple seed dataset for this prototype
+  const seeds = [
+    {
+      id: "ragi",
+      name: "Finger millet (Ragi)",
+      category: "grain",
+      climate: "dry",
+      colour: "dark",
+      tags: ["drought tolerant", "calcium rich"],
+      notes: "Traditional millet that grows well in low rainfall and poor soils."
+    },
+    {
+      id: "kodo",
+      name: "Kodo millet",
+      category: "grain",
+      climate: "dry",
+      colour: "light",
+      tags: ["resilient", "coarse cereal"],
+      notes: "Hardy cereal used in dry regions; can replace rice in many dishes."
+    },
+    {
+      id: "rice-red",
+      name: "Traditional red rice",
+      category: "grain",
+      climate: "humid",
+      colour: "red-brown",
+      tags: ["iron rich"],
+      notes: "Coloured rice variety with more fibre and minerals than polished white rice."
+    },
+    {
+      id: "black-gram",
+      name: "Black gram (Urad)",
+      category: "pulse",
+      climate: "moderate",
+      colour: "dark",
+      tags: ["protein", "nitrogen fixer"],
+      notes: "Important pulse crop; helps improve soil fertility when grown in rotation."
+    },
+    {
+      id: "pigeon-pea",
+      name: "Pigeon pea (Toor dal)",
+      category: "pulse",
+      climate: "dry",
+      colour: "light",
+      tags: ["deep rooted"],
+      notes: "Common dal crop; deep roots help it survive dry spells and hold soil."
+    },
+    {
+      id: "sesame",
+      name: "Sesame",
+      category: "oilseed",
+      climate: "dry",
+      colour: "light",
+      tags: ["oilseed", "small seed"],
+      notes: "Tiny oilseed used in sweets and chutneys; many local varieties exist."
+    },
+    {
+      id: "brinjal",
+      name: "Local brinjal mix",
+      category: "vegetable",
+      climate: "moderate",
+      colour: "dark",
+      tags: ["many colours"],
+      notes: "Represents the huge range of shapes and colours seen in traditional brinjal."
+    }
+  ];
+
+  // ---------- Rendering seed cards ----------
+  const galleryEl = document.getElementById("seedGallery");
+  const filterCategory = document.getElementById("filterCategory");
+  const filterClimate = document.getElementById("filterClimate");
+  const filterColour = document.getElementById("filterColour");
+  const filterSearch = document.getElementById("filterSearch");
+
+  function passesFilters(seed) {
+    if (filterCategory.value && seed.category !== filterCategory.value) return false;
+    if (filterClimate.value && seed.climate !== filterClimate.value) return false;
+    if (filterColour.value && seed.colour !== filterColour.value) return false;
+    const term = filterSearch.value.trim().toLowerCase();
+    if (term && !seed.name.toLowerCase().includes(term)) return false;
+    return true;
+  }
+
+  function renderSeeds() {
+    galleryEl.innerHTML = "";
+    const filtered = seeds.filter(passesFilters);
+    if (filtered.length === 0) {
+      galleryEl.innerHTML = "<p style='font-size:13px;color:#60747f;'>No seeds match these filters yet.</p>";
+      return;
+    }
+    filtered.forEach(seed => {
+      const card = document.createElement("article");
+      card.className = "card seed-card";
+      card.innerHTML = `
+        <h3>${seed.name}</h3>
+        <div class="seed-meta">
+          Type: ${nice(seed.category)} • Climate: ${nice(seed.climate)} • Colour: ${nice(seed.colour)}
+        </div>
+        <p>${seed.notes}</p>
+        <div class="seed-tags">
+          ${seed.tags.map(t => `<span class="tag-pill">${t}</span>`).join("")}
+        </div>
+      `;
+      galleryEl.appendChild(card);
+    });
+  }
+
+  function nice(value) {
+    const map = {
+      grain: "Grain / cereal",
+      pulse: "Pulse",
+      vegetable: "Vegetable",
+      oilseed: "Oilseed",
+      dry: "Dry / low rainfall",
+      moderate: "Moderate",
+      humid: "Humid",
+      light: "Light / pale",
+      "red-brown": "Red / brown",
+      dark: "Dark"
+    };
+    return map[value] || value;
+  }
+
+  [filterCategory, filterClimate, filterColour].forEach(sel =>
+    sel.addEventListener("change", renderSeeds)
+  );
+  filterSearch.addEventListener("input", renderSeeds);
+
+  // ---------- Compare seeds ----------
+  const compareA = document.getElementById("compareA");
+  const compareB = document.getElementById("compareB");
+
+  function populateCompareSelects() {
+    seeds.forEach(seed => {
+      const optA = document.createElement("option");
+      optA.value = seed.id;
+      optA.textContent = seed.name;
+      compareA.appendChild(optA);
+
+      const optB = document.createElement("option");
+      optB.value = seed.id;
+      optB.textContent = seed.name;
+      compareB.appendChild(optB);
+    });
+
+    if (seeds.length >= 2) {
+      compareA.value = seeds[0].id;
+      compareB.value = seeds[1].id;
+      updateCompare();
+    }
+  }
+
+  function updateCompare() {
+    const a = seeds.find(s => s.id === compareA.value);
+    const b = seeds.find(s => s.id === compareB.value);
+    document.getElementById("colA").textContent = a ? a.name : "Seed A";
+    document.getElementById("colB").textContent = b ? b.name : "Seed B";
+
+    document.getElementById("aType").textContent = a ? nice(a.category) : "–";
+    document.getElementById("bType").textContent = b ? nice(b.category) : "–";
+
+    document.getElementById("aClimate").textContent = a ? nice(a.climate) : "–";
+    document.getElementById("bClimate").textContent = b ? nice(b.climate) : "–";
+
+    document.getElementById("aColour").textContent = a ? nice(a.colour) : "–";
+    document.getElementById("bColour").textContent = b ? nice(b.colour) : "–";
+
+    document.getElementById("aNotes").textContent = a ? a.notes : "–";
+    document.getElementById("bNotes").textContent = b ? b.notes : "–";
+  }
+
+  compareA.addEventListener("change", updateCompare);
+  compareB.addEventListener("change", updateCompare);
+
+  // ---------- Image colour analyser ----------
+  const imageInput = document.getElementById("imageInput");
+  const previewImage = document.getElementById("previewImage");
+  const analysisArea = document.getElementById("analysisArea");
+  const hiddenCanvas = document.getElementById("hiddenCanvas");
+  const ctx = hiddenCanvas.getContext("2d");
+
+  imageInput.addEventListener("change", () => {
+    const file = imageInput.files[0];
+    if (!file) return;
+
+    const img = new Image();
+    img.onload = () => {
+      const maxW = 220;
+      const scale = Math.min(maxW / img.width, 1);
+      const w = img.width * scale;
+      const h = img.height * scale;
+
+      hiddenCanvas.width = w;
+      hiddenCanvas.height = h;
+      ctx.drawImage(img, 0, 0, w, h);
+
+      const imageData = ctx.getImageData(0, 0, w, h);
+      const data = imageData.data;
+      let r = 0, g = 0, b = 0, count = 0;
+
+      for (let i = 0; i < data.length; i += 4) {
+        r += data[i];
+        g += data[i + 1];
+        b += data[i + 2];
+        count++;
+      }
+
+      r = Math.round(r / count);
+      g = Math.round(g / count);
+      b = Math.round(b / count);
+
+      let guess = "mixed seeds / uncertain type";
+      if (g > r && g > b) {
+        guess = "likely leaf / green seed image";
+      } else if (r > g && r > b) {
+        guess = "likely reddish or brownish seeds";
+      } else if (b > r && b > g) {
+        guess = "likely dark seeds or soil background";
+      }
+
+      analysisArea.innerHTML = `
+        <p><strong>Average colour (RGB):</strong> ${r}, ${g}, ${b}</p>
+        <p><strong>Simple guess:</strong> ${guess}</p>
+        <p><em>Note:</em> This is only a prototype. It does not identify real varieties, it just shows how basic image processing could support seed documentation.</p>
+      `;
+    };
+
+    img.src = URL.createObjectURL(file);
+    previewImage.src = img.src;
+    previewImage.alt = "Uploaded seed image preview";
+  });
+
+  // ---------- Initialise ----------
+  renderSeeds();
+  populateCompareSelects();
+</script>
+
+</body>
+</html>
