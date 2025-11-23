@@ -6,84 +6,188 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="navbar">
-    <div class="brand">
-      <div class="brand-logo">🌱</div>
-      <div class="brand-text">
-        <span>Seed Diversity</span>
-        <span>School Project Website</span>
+
+<header class="navbar">
+  <div class="brand">
+    <div class="brand-logo">🌱</div>
+    <div class="brand-text">
+      <span data-i18n="site_title">Seed Diversity</span>
+      <span data-i18n="site_subtitle">School Project Website</span>
+    </div>
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html" class="active" data-i18n="nav_home">Home</a>
+    <a href="what-is-seed-diversity.html" data-i18n="nav_what">What is it?</a>
+    <a href="why-it-matters.html" data-i18n="nav_why">Why it matters</a>
+    <a href="threats.html" data-i18n="nav_threats">Threats</a>
+    <a href="how-we-can-help.html" data-i18n="nav_actions">Actions</a>
+    <a href="my-project.html" data-i18n="nav_project">My project</a>
+    <a href="seed-tools.html" data-i18n="nav_tools">Seed tools</a>
+    <a href="store-locator.html" data-i18n="nav_locator">Store locator</a>
+  </nav>
+
+  <div class="language-switch">
+    <span>Language:</span>
+    <button class="lang-btn lang-active" data-lang="en">EN</button>
+    <span>/</span>
+    <button class="lang-btn" data-lang="es">ES</button>
+  </div>
+</header>
+
+<main class="wrapper">
+  <section class="hero">
+    <div class="hero-main">
+      <p class="tagline" data-i18n="home_tagline">Food • Climate • Culture</p>
+      <h1 class="page-title" data-i18n="home_title">
+        🌾 Welcome to my Seed Diversity Project
+      </h1>
+      <p class="page-subtitle" data-i18n="home_subtitle">
+        This website explains what seed diversity is, why it matters for our future,
+        and how schools and communities can help protect it.
+      </p>
+      <div class="btn-row">
+        <a href="what-is-seed-diversity.html" class="btn btn-main" data-i18n="home_btn_start">
+          Start learning
+        </a>
+        <a href="my-project.html" class="btn btn-ghost" data-i18n="home_btn_project">
+          See my project work
+        </a>
+      </div>
+
+      <div class="info-callout">
+        <strong data-i18n="home_callout_title">Did you know?</strong>
+        <p data-i18n="home_callout_body">
+          Researchers estimate that farmers have lost more than 75% of traditional crop
+          varieties in the last 100 years. Every local seed that disappears takes unique
+          flavours, stories and climate resilience with it.
+        </p>
       </div>
     </div>
-    <nav class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="what-is-seed-diversity.html">What is it?</a>
-      <a href="why-it-matters.html">Why it matters</a>
-      <a href="threats.html">Threats</a>
-      <a href="how-we-can-help.html">Actions</a>
-      <a href="my-project.html">My project</a>
-      <a href="seed-tools.html">Seed tools</a>
-      <a href="store-locator.html">Store locator</a>
-    </nav>
-  </header>
 
-  <main class="wrapper">
-    <section class="hero">
-      <div class="hero-main">
-        <p class="tagline">Food • Climate • Culture</p>
-        <h1 class="page-title">Welcome to my Seed Diversity Project</h1>
-        <p class="page-subtitle">
-          This website explains what seed diversity is, why it matters for our future,
-          and how schools and communities can help protect it.
+    <aside class="hero-side">
+      <h2>📌 Quick facts</h2>
+      <ul>
+        <li>Many traditional seed varieties have disappeared in the last 100 years.</li>
+        <li>Different seeds can survive different climates, diseases and soils.</li>
+        <li>Seed diversity connects science, environment, culture and food.</li>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="section">
+    <h2>🧭 What you will find on this site</h2>
+    <div class="grid-3">
+      <article class="card">
+        <h3>🌱 What is seed diversity?</h3>
+        <p>
+          A clear explanation of genetic diversity inside crops, with examples
+          of different seeds and what makes them special.
         </p>
-        <div class="btn-row">
-          <a href="what-is-seed-diversity.html" class="btn btn-main">Start learning</a>
-          <a href="my-project.html" class="btn btn-ghost">See my project work</a>
-        </div>
-      </div>
+        <a href="what-is-seed-diversity.html" class="btn btn-ghost" style="margin-top: 8px;">
+          Open page
+        </a>
+      </article>
 
-      <aside class="hero-side">
-        <h2>Quick facts</h2>
-        <ul>
-          <li>Many traditional seed varieties have disappeared in the last 100 years.</li>
-          <li>Different seeds can survive different climates, diseases and soils.</li>
-          <li>Seed diversity connects science, environment, culture and food.</li>
-        </ul>
-      </aside>
-    </section>
+      <article class="card">
+        <h3>🌍 Why it matters</h3>
+        <p>
+          How seed diversity supports food security, climate resilience and
+          cultural heritage across the world.
+        </p>
+        <a href="why-it-matters.html" class="btn btn-ghost" style="margin-top: 8px;">
+          Open page
+        </a>
+      </article>
 
-    <section class="section">
-      <h2>What you will find on this site</h2>
-      <div class="grid-3">
-        <article class="card">
-          <h3>What is seed diversity?</h3>
-          <p>
-            A simple explanation of genetic diversity inside crops, with examples
-            of different seeds and what makes them special.
-          </p>
-          <a href="what-is-seed-diversity.html" class="btn btn-ghost" style="margin-top: 8px;">Open page</a>
-        </article>
-        <article class="card">
-          <h3>Why it matters</h3>
-          <p>
-            How seed diversity helps with food security, climate resilience and
-            cultural heritage across the world.
-          </p>
-          <a href="why-it-matters.html" class="btn btn-ghost" style="margin-top: 8px;">Open page</a>
-        </article>
-        <article class="card">
-          <h3>Threats & Actions</h3>
-          <p>
-            The main threats to seed diversity and realistic actions that
-            schools, communities and students can take.
-          </p>
-          <a href="threats.html" class="btn btn-ghost" style="margin-top: 8px;">Open threats page</a>
-        </article>
-      </div>
-    </section>
-  </main>
+      <article class="card">
+        <h3>⚠️ Threats & actions</h3>
+        <p>
+          The main threats to seed diversity and realistic actions that
+          schools, communities and students can take.
+        </p>
+        <a href="threats.html" class="btn btn-ghost" style="margin-top: 8px;">
+          Open threats page
+        </a>
+      </article>
+    </div>
+  </section>
+</main>
 
-  <footer>
-    Seed Diversity Project • Created for school • <span>Student Website</span>
-  </footer>
+<footer>
+  Seed Diversity Project • Created for school • <span>Student Website</span>
+</footer>
+
+<!-- ===== Language toggle script (EN / ES) ===== -->
+<script>
+  const translations = {
+    en: {
+      site_title: "Seed Diversity",
+      site_subtitle: "School Project Website",
+      nav_home: "Home",
+      nav_what: "What is it?",
+      nav_why: "Why it matters",
+      nav_threats: "Threats",
+      nav_actions: "Actions",
+      nav_project: "My project",
+      nav_tools: "Seed tools",
+      nav_locator: "Store locator",
+      home_tagline: "Food • Climate • Culture",
+      home_title: "🌾 Welcome to my Seed Diversity Project",
+      home_subtitle:
+        "This website explains what seed diversity is, why it matters for our future, and how schools and communities can help protect it.",
+      home_btn_start: "Start learning",
+      home_btn_project: "See my project work",
+      home_callout_title: "Did you know?",
+      home_callout_body:
+        "Researchers estimate that farmers have lost more than 75% of traditional crop varieties in the last 100 years. Every local seed that disappears takes unique flavours, stories and climate resilience with it."
+    },
+    es: {
+      site_title: "Diversidad de Semillas",
+      site_subtitle: "Página web del proyecto escolar",
+      nav_home: "Inicio",
+      nav_what: "¿Qué es?",
+      nav_why: "Por qué importa",
+      nav_threats: "Amenazas",
+      nav_actions: "Acciones",
+      nav_project: "Mi proyecto",
+      nav_tools: "Herramientas",
+      nav_locator: "Mapa de tiendas",
+      home_tagline: "Alimentación • Clima • Cultura",
+      home_title: "🌾 Bienvenido a mi proyecto sobre diversidad de semillas",
+      home_subtitle:
+        "Esta página explica qué es la diversidad de semillas, por qué es importante para nuestro futuro y cómo las escuelas y comunidades pueden ayudar a protegerla.",
+      home_btn_start: "Empezar a aprender",
+      home_btn_project: "Ver mi trabajo",
+      home_callout_title: "¿Sabías que...?",
+      home_callout_body:
+        "Los investigadores estiman que los agricultores han perdido más del 75% de las variedades tradicionales de cultivos en los últimos 100 años. Cada semilla local que desaparece se lleva sabores, historias y resistencia al clima."
+    }
+  };
+
+  const langButtons = document.querySelectorAll(".lang-btn");
+
+  function setLanguage(lang) {
+    document.documentElement.setAttribute("lang", lang);
+    langButtons.forEach(btn => {
+      btn.classList.toggle("lang-active", btn.dataset.lang === lang);
+    });
+
+    const dict = translations[lang];
+    Object.keys(dict).forEach(key => {
+      document.querySelectorAll(`[data-i18n="${key}"]`).forEach(el => {
+        el.textContent = dict[key];
+      });
+    });
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  });
+
+  // Default language
+  setLanguage("en");
+</script>
+
 </body>
 </html>
