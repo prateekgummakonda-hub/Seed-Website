@@ -332,3 +332,54 @@ footer {
     margin-top: 20px;
   }
 }
+/* ===== Info callouts / highlight boxes ===== */
+.info-callout {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #e3f2fd;
+  border-left: 4px solid #42a5f5;
+  font-size: 13px;
+  color: #1e3a56;
+}
+
+.info-callout strong {
+  font-weight: 600;
+}
+
+/* ===== Language switch in navbar ===== */
+.language-switch {
+  margin-left: 18px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #e8f5e9;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: inherit;
+  padding: 3px 6px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.lang-btn:hover {
+  background: rgba(255,255,255,0.16);
+}
+
+.lang-active {
+  background: #ffffff;
+  color: #1b5e20;
+  font-weight: 600;
+}
+
+/* On small screens, push language switch to its own line nicely */
+@media (max-width: 800px) {
+  .language-switch {
+    margin-left: 0;
+  }
+}
