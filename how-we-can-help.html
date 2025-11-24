@@ -11,38 +11,48 @@
   <div class="brand">
     <div class="brand-logo">🌱</div>
     <div class="brand-text">
-      <span>Seed Diversity</span>
-      <span>School Project Website</span>
+      <span data-i18n="site_title">Seed Diversity</span>
+      <span data-i18n="site_subtitle">School Project Website</span>
     </div>
   </div>
 
   <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="what-is-seed-diversity.html">What is it?</a>
-    <a href="why-it-matters.html">Why it matters</a>
-    <a href="threats.html">Threats</a>
-    <a href="how-we-can-help.html" class="active">Actions</a>
-    <a href="my-project.html">My project</a>
-    <a href="seed-tools.html">Seed tools</a>
-    <a href="store-locator.html">Store locator</a>
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="what-is-seed-diversity.html" data-i18n="nav_what">What is it?</a>
+    <a href="why-it-matters.html" data-i18n="nav_why">Why it matters</a>
+    <a href="threats.html" data-i18n="nav_threats">Threats</a>
+    <a href="how-we-can-help.html" class="active" data-i18n="nav_actions">Actions</a>
+    <a href="my-project.html" data-i18n="nav_project">My project</a>
+    <a href="seed-tools.html" data-i18n="nav_tools">Seed tools</a>
+    <a href="store-locator.html" data-i18n="nav_locator">Store locator</a>
   </nav>
+
+  <div class="language-switch">
+    <span>Language:</span>
+    <button class="lang-btn lang-active" data-lang="en">EN</button>
+    <span>/</span>
+    <button class="lang-btn" data-lang="te">TE</button>
+    <span>/</span>
+    <button class="lang-btn" data-lang="ta">TA</button>
+  </div>
 </header>
 
 <main class="wrapper">
-  <h1 class="page-title">🤝 How we can help protect seed diversity</h1>
-  <p class="page-subtitle">
+  <h1 class="page-title" data-i18n="title_actions">🤝 How we can help protect seed diversity</h1>
+  <p class="page-subtitle" data-i18n="subtitle_actions">
     Everyone can play a role in protecting seeds: students, schools, farmers,
     local communities and consumers.
   </p>
 
   <div class="info-callout">
-    <strong>Start small:</strong>
-    <p>
+    <strong data-i18n="callout_actions_title">Start small:</strong>
+    <p data-i18n="callout_actions_body">
       You do not need to change everything at once. Even one new activity in your
       school or home can help keep local seeds and knowledge alive.
     </p>
   </div>
 
+  <!-- Rest of body stays English for now -->
   <section class="section">
     <h2>🏠 Everyday choices</h2>
     <div class="card">
@@ -124,6 +134,90 @@
 <footer>
   Seed Diversity Project • Created for school • <span>Student Website</span>
 </footer>
+
+<script>
+  const translations = {
+    en: {
+      site_title: "Seed Diversity",
+      site_subtitle: "School Project Website",
+      nav_home: "Home",
+      nav_what: "What is it?",
+      nav_why: "Why it matters",
+      nav_threats: "Threats",
+      nav_actions: "Actions",
+      nav_project: "My project",
+      nav_tools: "Seed tools",
+      nav_locator: "Store locator",
+
+      title_actions: "🤝 How we can help protect seed diversity",
+      subtitle_actions:
+        "Everyone can play a role in protecting seeds: students, schools, farmers, local communities and consumers.",
+      callout_actions_title: "Start small:",
+      callout_actions_body:
+        "You do not need to change everything at once. Even one new activity in your school or home can help keep local seeds and knowledge alive."
+    },
+    te: {
+      site_title: "విత్తన వైవిధ్యం",
+      site_subtitle: "పాఠశాల ప్రాజెక్ట్ వెబ్‌సైట్",
+      nav_home: "మొదటి పేజీ",
+      nav_what: "ఏమిటి?",
+      nav_why: "ఎందుకు ముఖ్యం?",
+      nav_threats: "ముప్పులు",
+      nav_actions: "చర్యలు",
+      nav_project: "నా ప్రాజెక్ట్",
+      nav_tools: "విత్తన సాధనాలు",
+      nav_locator: "దుకాణ మ్యాప్",
+
+      title_actions: "🤝 విత్తన వైవిధ్యాన్ని కాపాడటానికి మనం ఏమి చేయగలం?",
+      subtitle_actions:
+        "విద్యార్థులు, పాఠశాలలు, రైతులు, స్థానిక సమాజాలు మరియు వినియోగదారులు – అందరూ విత్తనాలను కాపాడడంలో తమ పాత్ర పోషించవచ్చు.",
+      callout_actions_title: "చిన్నగా మొదలు పెట్టండి:",
+      callout_actions_body:
+        "అన్నీ ఒకేసారి మార్చాల్సిన అవసరం లేదు. మీ పాఠశాల లేదా ఇంటిలో ఒక చిన్న కొత్త కార్య‌క్ర‌మం కూడా స్థానిక విత్తనాలు మరియు జ్ఞానాన్ని జీవంగా ఉంచడంలో సహాయపడుతుంది."
+    },
+    ta: {
+      site_title: "விதை பல்வகைமை",
+      site_subtitle: "பள்ளி திட்ட இணையதளம்",
+      nav_home: "முதல் பக்கம்",
+      nav_what: "என்னது?",
+      nav_why: "ஏன் முக்கியம்?",
+      nav_threats: "அபாயங்கள்",
+      nav_actions: "நடவடிக்கைகள்",
+      nav_project: "என் திட்டம்",
+      nav_tools: "விதை கருவிகள்",
+      nav_locator: "கடை வரைபடம்",
+
+      title_actions: "🤝 விதை பல்வகைமையை காக்க நாம் என்ன செய்யலாம்?",
+      subtitle_actions:
+        "விதைகளை காப்பாற்றுவதில் மாணவர்கள், பள்ளிகள், விவசாயிகள், உள்ளூர் சமூகங்கள் மற்றும் நுகர்வோர் – எல்லோருக்கும் ஒரு பங்கு உள்ளது.",
+      callout_actions_title: "சின்னதாக தொடங்குங்கள்:",
+      callout_actions_body:
+        "ஒரே நேரத்தில் எல்லாவற்றையும் மாற்ற வேண்டிய அவசியமில்லை. உங்கள் வீட்டில் அல்லது பள்ளியில் ஒரு புதிய செயல் கூட உள்ளூர் விதைகளையும் அறிவையும் உயிரோடு வைத்திருக்க உதவலாம்."
+    }
+  };
+
+  const langButtons = document.querySelectorAll(".lang-btn");
+
+  function setLanguage(lang) {
+    document.documentElement.setAttribute("lang", lang);
+    langButtons.forEach(btn => {
+      btn.classList.toggle("lang-active", btn.dataset.lang === lang);
+    });
+
+    const dict = translations[lang];
+    Object.keys(dict).forEach(key => {
+      document.querySelectorAll(`[data-i18n="${key}"]`).forEach(el => {
+        el.textContent = dict[key];
+      });
+    });
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  });
+
+  setLanguage("en");
+</script>
 
 </body>
 </html>
