@@ -11,33 +11,42 @@
   <div class="brand">
     <div class="brand-logo">🌱</div>
     <div class="brand-text">
-      <span>Seed Diversity</span>
-      <span>School Project Website</span>
+      <span data-i18n="site_title">Seed Diversity</span>
+      <span data-i18n="site_subtitle">School Project Website</span>
     </div>
   </div>
 
   <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="what-is-seed-diversity.html">What is it?</a>
-    <a href="why-it-matters.html" class="active">Why it matters</a>
-    <a href="threats.html">Threats</a>
-    <a href="how-we-can-help.html">Actions</a>
-    <a href="my-project.html">My project</a>
-    <a href="seed-tools.html">Seed tools</a>
-    <a href="store-locator.html">Store locator</a>
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="what-is-seed-diversity.html" data-i18n="nav_what">What is it?</a>
+    <a href="why-it-matters.html" class="active" data-i18n="nav_why">Why it matters</a>
+    <a href="threats.html" data-i18n="nav_threats">Threats</a>
+    <a href="how-we-can-help.html" data-i18n="nav_actions">Actions</a>
+    <a href="my-project.html" data-i18n="nav_project">My project</a>
+    <a href="seed-tools.html" data-i18n="nav_tools">Seed tools</a>
+    <a href="store-locator.html" data-i18n="nav_locator">Store locator</a>
   </nav>
+
+  <div class="language-switch">
+    <span>Language:</span>
+    <button class="lang-btn lang-active" data-lang="en">EN</button>
+    <span>/</span>
+    <button class="lang-btn" data-lang="te">TE</button>
+    <span>/</span>
+    <button class="lang-btn" data-lang="ta">TA</button>
+  </div>
 </header>
 
 <main class="wrapper">
-  <h1 class="page-title">🌍 Why does seed diversity matter?</h1>
-  <p class="page-subtitle">
+  <h1 class="page-title" data-i18n="title_why">🌍 Why does seed diversity matter?</h1>
+  <p class="page-subtitle" data-i18n="subtitle_why">
     Seed diversity supports food security, climate resilience and cultural identity.
     Losing it makes our food system weaker and less fair.
   </p>
 
   <div class="info-callout">
-    <strong>Big picture:</strong>
-    <p>
+    <strong data-i18n="callout_why_title">Big picture:</strong>
+    <p data-i18n="callout_why_body">
       When farmers and communities keep many seed varieties alive, they are also
       protecting future options. This gives the next generation more choices than we had,
       not fewer.
@@ -119,6 +128,90 @@
 <footer>
   Seed Diversity Project • Created for school • <span>Student Website</span>
 </footer>
+
+<script>
+  const translations = {
+    en: {
+      site_title: "Seed Diversity",
+      site_subtitle: "School Project Website",
+      nav_home: "Home",
+      nav_what: "What is it?",
+      nav_why: "Why it matters",
+      nav_threats: "Threats",
+      nav_actions: "Actions",
+      nav_project: "My project",
+      nav_tools: "Seed tools",
+      nav_locator: "Store locator",
+
+      title_why: "🌍 Why does seed diversity matter?",
+      subtitle_why:
+        "Seed diversity supports food security, climate resilience and cultural identity. Losing it makes our food system weaker and less fair.",
+      callout_why_title: "Big picture:",
+      callout_why_body:
+        "When farmers and communities keep many seed varieties alive, they are also protecting future options. This gives the next generation more choices than we had, not fewer."
+    },
+    te: {
+      site_title: "విత్తన వైవిధ్యం",
+      site_subtitle: "పాఠశాల ప్రాజెక్ట్ వెబ్‌సైట్",
+      nav_home: "మొదటి పేజీ",
+      nav_what: "ఏమిటి?",
+      nav_why: "ఎందుకు ముఖ్యం?",
+      nav_threats: "ముప్పులు",
+      nav_actions: "చర్యలు",
+      nav_project: "నా ప్రాజెక్ట్",
+      nav_tools: "విత్తన సాధనాలు",
+      nav_locator: "దుకాణ మ్యాప్",
+
+      title_why: "🌍 విత్తన వైవిధ్యం ఎందుకు ముఖ్యం?",
+      subtitle_why:
+        "విత్తన వైవిధ్యం ఆహార భద్రత, వాతావరణ సహనశక్తి మరియు సాంస్కృతిక గుర్తింపుని కాపాడుతుంది. ఇది తగ్గిపోతే మన ఆహార వ్యవస్థ బలహీనంగా, అసమానంగా మారుతుంది.",
+      callout_why_title: "మొత్తం దృశ్యం:",
+      callout_why_body:
+        "రైతులు మరియు గ్రామాలు అనేక రకాల విత్తనాలను జీవంగా ఉంచితే, వారు భవిష్యత్తు ఎంపికలను కూడా కాపాడుతున్నారు. దీంతో వచ్చే తరం మనకన్నా ఎక్కువ ఎంపికలు పొందుతుంది, తక్కువ కాదు."
+    },
+    ta: {
+      site_title: "விதை பல்வகைமை",
+      site_subtitle: "பள்ளி திட்ட இணையதளம்",
+      nav_home: "முதல் பக்கம்",
+      nav_what: "என்னது?",
+      nav_why: "ஏன் முக்கியம்?",
+      nav_threats: "அபாயங்கள்",
+      nav_actions: "நடவடிக்கைகள்",
+      nav_project: "என் திட்டம்",
+      nav_tools: "விதை கருவிகள்",
+      nav_locator: "கடை வரைபடம்",
+
+      title_why: "🌍 விதை பல்வகைமை ஏன் முக்கியம்?",
+      subtitle_why:
+        "விதை பல்வகைமை உணவுப் பாதுகாப்பு, காலநிலைத் தாங்கும்தன்மை மற்றும் கலாச்சார அடையாளத்தை ஆதரிக்கிறது. இது குறையும் போது நமது உணவுக் கண்கட்டி பலவீனமாகவும் அநியாயமாகவும் மாறுகிறது.",
+      callout_why_title: "மொத்தக் காட்சி:",
+      callout_why_body:
+        "விவசாயிகள் மற்றும் சமூகங்கள் பல வகை விதைகளை உயிரோடு வைத்தால், அவர்கள் எதிர்கால தலைமுறைக்கான தேர்வுகளையும் காப்பாற்றுகிறார்கள். இதனால் அடுத்த தலைமுறைக்கு நம்மைவிட கூடுதல் தேர்வுகள் கிடைக்கும்."
+    }
+  };
+
+  const langButtons = document.querySelectorAll(".lang-btn");
+
+  function setLanguage(lang) {
+    document.documentElement.setAttribute("lang", lang);
+    langButtons.forEach(btn => {
+      btn.classList.toggle("lang-active", btn.dataset.lang === lang);
+    });
+
+    const dict = translations[lang];
+    Object.keys(dict).forEach(key => {
+      document.querySelectorAll(`[data-i18n="${key}"]`).forEach(el => {
+        el.textContent = dict[key];
+      });
+    });
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  });
+
+  setLanguage("en");
+</script>
 
 </body>
 </html>
