@@ -31,7 +31,9 @@
     <span>Language:</span>
     <button class="lang-btn lang-active" data-lang="en">EN</button>
     <span>/</span>
-    <button class="lang-btn" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="te">TE</button>
+    <span>/</span>
+    <button class="lang-btn" data-lang="ta">TA</button>
   </div>
 </header>
 
@@ -118,7 +120,7 @@
   Seed Diversity Project • Created for school • <span>Student Website</span>
 </footer>
 
-<!-- ===== Language toggle script (EN / ES) ===== -->
+<!-- ===== Language toggle script (EN / TE / TA) ===== -->
 <script>
   const translations = {
     en: {
@@ -132,6 +134,7 @@
       nav_project: "My project",
       nav_tools: "Seed tools",
       nav_locator: "Store locator",
+
       home_tagline: "Food • Climate • Culture",
       home_title: "🌾 Welcome to my Seed Diversity Project",
       home_subtitle:
@@ -142,26 +145,49 @@
       home_callout_body:
         "Researchers estimate that farmers have lost more than 75% of traditional crop varieties in the last 100 years. Every local seed that disappears takes unique flavours, stories and climate resilience with it."
     },
-    es: {
-      site_title: "Diversidad de Semillas",
-      site_subtitle: "Página web del proyecto escolar",
-      nav_home: "Inicio",
-      nav_what: "¿Qué es?",
-      nav_why: "Por qué importa",
-      nav_threats: "Amenazas",
-      nav_actions: "Acciones",
-      nav_project: "Mi proyecto",
-      nav_tools: "Herramientas",
-      nav_locator: "Mapa de tiendas",
-      home_tagline: "Alimentación • Clima • Cultura",
-      home_title: "🌾 Bienvenido a mi proyecto sobre diversidad de semillas",
+    te: {
+      site_title: "విత్తన వైవిధ్యం",
+      site_subtitle: "పాఠశాల ప్రాజెక్ట్ వెబ్‌సైట్",
+      nav_home: "మొదటి పేజీ",
+      nav_what: "ఏమిటి?",
+      nav_why: "ఎందుకు ముఖ్యం?",
+      nav_threats: "ముప్పులు",
+      nav_actions: "చర్యలు",
+      nav_project: "నా ప్రాజెక్ట్",
+      nav_tools: "విత్తన సాధనాలు",
+      nav_locator: "దుకాణ మ్యాప్",
+
+      home_tagline: "ఆహారం • వాతావరణం • సంస్కృతి",
+      home_title: "🌾 నా విత్తన వైవిధ్య ప్రాజెక్ట్‌కు స్వాగతం",
       home_subtitle:
-        "Esta página explica qué es la diversidad de semillas, por qué es importante para nuestro futuro y cómo las escuelas y comunidades pueden ayudar a protegerla.",
-      home_btn_start: "Empezar a aprender",
-      home_btn_project: "Ver mi trabajo",
-      home_callout_title: "¿Sabías que...?",
+        "ఈ వెబ్‌సైట్ విత్తన వైవిధ్యం అంటే ఏమిటి, అది మన భవిష్యత్తుకు ఎందుకు ముఖ్యం, మరియు పాఠశాలలు, సమాజాలు దాన్ని ఎలా కాపాడగలవో సులభంగా చూపిస్తుంది.",
+      home_btn_start: "పాఠం ప్రారంభించండి",
+      home_btn_project: "నా ప్రాజెక్ట్ చూడండి",
+      home_callout_title: "మీకు తెలుసా?",
       home_callout_body:
-        "Los investigadores estiman que los agricultores han perdido más del 75% de las variedades tradicionales de cultivos en los últimos 100 años. Cada semilla local que desaparece se lleva sabores, historias y resistencia al clima."
+        "గత 100 సంవత్సరాల్లో రైతులు సంప్రదాయ పంట రకాలలో 75% కంటే ఎక్కువను కోల్పోయారని పరిశోధకులు అంచనా వేస్తున్నారు. ప్రతి స్థానిక విత్తనం నశించినప్పుడు, ప్రత్యేక రుచులు, కథలు మరియు వాతావరణ సహనశక్తి కూడా కలిసి పోతాయి."
+    },
+    ta: {
+      site_title: "விதை பல்வகைமை",
+      site_subtitle: "பள்ளி திட்ட இணையதளம்",
+      nav_home: "முதல் பக்கம்",
+      nav_what: "என்னது?",
+      nav_why: "ஏன் முக்கியம்?",
+      nav_threats: "அபாயங்கள்",
+      nav_actions: "நடவடிக்கைகள்",
+      nav_project: "என் திட்டம்",
+      nav_tools: "விதை கருவிகள்",
+      nav_locator: "கடை வரைபடம்",
+
+      home_tagline: "உணவு • காலநிலை • பண்பாடு",
+      home_title: "🌾 என் விதை பல்வகைமை திட்டத்திற்கு வரவேற்கிறேன்",
+      home_subtitle:
+        "இந்த இணையதளம் விதை பல்வகைமை என்பது என்ன, அது எங்கள் எதிர்காலத்திற்கு ஏன் முக்கியம், பள்ளிகளும் சமூகங்களும் அதை எப்படி பாதுகாக்கலாம் என்பதைக் தெளிவாக விளக்குகிறது.",
+      home_btn_start: "கற்றலைத் தொடங்குங்கள்",
+      home_btn_project: "என் திட்டப் பணியைப் பாருங்கள்",
+      home_callout_title: "உங்களுக்கு தெரியுமா?",
+      home_callout_body:
+        "கடந்த 100 ஆண்டுகளில் பாரம்பரிய பயிர் வகைகளில் 75% ஐவிட அதிகம் இழந்துவிட்டதாக ஆராய்ச்சியாளர்கள் கணக்கிடுகின்றனர். ஒவ்வொரு உள்ளூர் விதையும் மறைந்தால், அதனுடன் தனித்துவமான சுவைகள், கதைகள் மற்றும் காலநிலைத் தாங்கும்தன்மையும் கெட்டுப்போகிறது."
     }
   };
 
