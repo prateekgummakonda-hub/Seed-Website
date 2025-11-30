@@ -2,165 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Seed Tools</title>
+  <title>Seed Tools – Prototype</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Page-specific polish for Seed Tools -->
-  <style>
-    .tools-intro {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #4a5b63;
-    }
-
-    .tools-layout {
-      margin-top: 18px;
-    }
-
-    .tools-panel h2 {
-      font-size: 17px;
-      margin-bottom: 6px;
-    }
-
-    .tools-panel p {
-      font-size: 13px;
-      color: #60747f;
-      margin-bottom: 10px;
-    }
-
-    .filter-row {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .filter-row label {
-      font-size: 12px;
-      color: #455a64;
-      margin-bottom: 2px;
-      display: block;
-    }
-
-    .filter-row select,
-    .filter-row input[type="text"] {
-      width: 100%;
-      padding: 6px 8px;
-      border-radius: 8px;
-      border: 1px solid #cfd8dc;
-      font-size: 13px;
-    }
-
-    .seed-gallery {
-      margin-top: 8px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 10px;
-    }
-
-    .seed-card {
-      font-size: 13px;
-    }
-
-    .seed-card h3 {
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
-
-    .seed-meta {
-      font-size: 12px;
-      color: #78909c;
-      margin-bottom: 4px;
-    }
-
-    .seed-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-      margin-top: 4px;
-    }
-
-    .tag-pill {
-      font-size: 11px;
-      padding: 2px 6px;
-      border-radius: 999px;
-      background: #e8f5e9;
-      color: #2e7d32;
-      border: 1px solid #c5e1a5;
-    }
-
-    .compare-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .compare-grid label {
-      font-size: 12px;
-      color: #455a64;
-      display: block;
-      margin-bottom: 2px;
-    }
-
-    .compare-grid select {
-      width: 100%;
-      padding: 6px 8px;
-      border-radius: 8px;
-      border: 1px solid #cfd8dc;
-      font-size: 13px;
-    }
-
-    .compare-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12px;
-      margin-top: 4px;
-    }
-
-    .compare-table th,
-    .compare-table td {
-      border: 1px solid #e0e0e0;
-      padding: 6px 8px;
-      text-align: left;
-    }
-
-    .compare-table th {
-      background: #f5f5f5;
-      font-weight: 600;
-    }
-
-    .image-analyser {
-      margin-top: 16px;
-      border-top: 1px dashed #cfd8dc;
-      padding-top: 12px;
-    }
-
-    .image-analyser label {
-      font-size: 12px;
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .image-analyser input[type="file"] {
-      font-size: 12px;
-      margin-bottom: 6px;
-    }
-
-    .image-preview {
-      margin-top: 6px;
-      max-width: 100%;
-      max-height: 140px;
-      border-radius: 10px;
-      display: block;
-    }
-
-    .analysis-result {
-      margin-top: 6px;
-      font-size: 12px;
-      color: #455a64;
-    }
-  </style>
 </head>
 <body>
 
@@ -168,389 +11,393 @@
   <div class="brand">
     <div class="brand-logo">🌱</div>
     <div class="brand-text">
-      <span>Seed Diversity</span>
-      <span>School Project Website</span>
+      <span data-i18n="site_title">Seed Diversity</span>
+      <span data-i18n="site_subtitle">School Project Website</span>
     </div>
   </div>
+
   <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="what-is-seed-diversity.html">What is it?</a>
-    <a href="why-it-matters.html">Why it matters</a>
-    <a href="threats.html">Threats</a>
-    <a href="how-we-can-help.html">Actions</a>
-    <a href="my-project.html">My project</a>
-    <a href="seed-tools.html" class="active">Seed tools</a>
-    <a href="store-locator.html">Store locator</a>
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="what-is-seed-diversity.html" data-i18n="nav_what">What is it?</a>
+    <a href="why-it-matters.html" data-i18n="nav_why">Why it matters</a>
+    <a href="threats.html" data-i18n="nav_threats">Threats</a>
+    <a href="how-we-can-help.html" data-i18n="nav_actions">Actions</a>
+    <a href="my-project.html" data-i18n="nav_project">My project</a>
+    <a href="seed-tools.html" class="active" data-i18n="nav_tools">Seed tools</a>
+    <a href="store-locator.html" data-i18n="nav_locator">Store locator</a>
   </nav>
+
+  <div class="language-switch">
+    <span data-i18n="label_language">Language:</span>
+    <button class="lang-btn lang-active" data-lang="en">EN</button>
+    <span>/</span>
+    <button class="lang-btn" data-lang="te">TE</button>
+    <span>/</span>
+    <button class="lang-btn" data-lang="ta">TA</button>
+  </div>
 </header>
 
 <main class="wrapper">
-  <h1 class="page-title">Seed Tools</h1>
-  <p class="tools-intro">
-    This page is a prototype. You can:
-    browse a small set of seeds, use simple filters,
-    compare two types side by side, and test a basic colour-based image analyser.
+  <h1 class="page-title" data-i18n="title_tools">🛠️ Seed tools – prototype explorer</h1>
+  <p class="page-subtitle" data-i18n="subtitle_tools">
+    This page is a prototype. It does not use real farmer data yet, but it shows how
+    filters and comparisons could help choose seeds for different conditions.
   </p>
 
+  <div class="info-callout">
+    <strong data-i18n="tools_callout_title">How to use:</strong>
+    <p data-i18n="tools_callout_body">
+      Use the filters to narrow down example seeds by crop type and climate.
+      Then select two seeds and click “Compare selected” to see them side by side.
+    </p>
+  </div>
+
   <section class="section">
-    <div class="tools-layout">
-      <!-- LEFT PANEL: filters + gallery -->
-      <div class="tools-panel">
-        <h2>Seed gallery & filters</h2>
-        <p>Choose filters or search by name to explore the seeds in this prototype list.</p>
-
-        <div class="filter-row">
-          <div>
-            <label for="filterCategory">Seed type</label>
-            <select id="filterCategory">
-              <option value="">All types</option>
-              <option value="grain">Grain / cereal</option>
-              <option value="pulse">Pulse</option>
-              <option value="vegetable">Vegetable</option>
-              <option value="oilseed">Oilseed</option>
-            </select>
-          </div>
-          <div>
-            <label for="filterClimate">Climate fit</label>
-            <select id="filterClimate">
-              <option value="">All climates</option>
-              <option value="dry">Dry / low rainfall</option>
-              <option value="moderate">Moderate</option>
-              <option value="humid">Humid</option>
-            </select>
-          </div>
+    <h2 data-i18n="filters_title">🔍 Filters</h2>
+    <div class="card">
+      <div class="grid-3">
+        <div>
+          <label for="filter-crop" data-i18n="filter_crop_label">Crop type</label>
+          <select id="filter-crop">
+            <option value="all" data-i18n="filter_any_crop">Any</option>
+            <option value="rice">Rice</option>
+            <option value="millet">Millet</option>
+            <option value="pulse">Pulse</option>
+          </select>
         </div>
-
-        <div class="filter-row">
-          <div>
-            <label for="filterColour">Seed colour</label>
-            <select id="filterColour">
-              <option value="">Any colour</option>
-              <option value="light">Light / pale</option>
-              <option value="red-brown">Red / brown</option>
-              <option value="dark">Dark</option>
-            </select>
-          </div>
-          <div>
-            <label for="filterSearch">Search by name</label>
-            <input type="text" id="filterSearch" placeholder="e.g. ragi, black gram" />
-          </div>
+        <div>
+          <label for="filter-climate" data-i18n="filter_climate_label">Climate</label>
+          <select id="filter-climate">
+            <option value="all" data-i18n="filter_any_climate">Any</option>
+            <option value="dry" data-i18n="filter_climate_dry">Dry / low rainfall</option>
+            <option value="wet" data-i18n="filter_climate_wet">Wet / high rainfall</option>
+            <option value="flood" data-i18n="filter_climate_flood">Flood-prone</option>
+          </select>
         </div>
-
-        <div class="seed-gallery" id="seedGallery">
-          <!-- cards inserted by JavaScript -->
+        <div>
+          <label for="filter-trait" data-i18n="filter_trait_label">Key trait</label>
+          <select id="filter-trait">
+            <option value="all" data-i18n="filter_any_trait">Any</option>
+            <option value="drought">Drought tolerant</option>
+            <option value="aroma">Aromatic / special taste</option>
+            <option value="soil">Improves soil</option>
+          </select>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- RIGHT PANEL: compare + image analyser -->
-      <div class="tools-panel">
-        <h2>Compare seeds</h2>
-        <p>Select two seeds from the list to see their key traits side by side.</p>
+  <section class="section">
+    <h2 data-i18n="list_title">🌾 Example seeds</h2>
+    <div id="seed-list" class="grid-3"></div>
+  </section>
 
-        <div class="compare-grid">
-          <div>
-            <label for="compareA">Seed A</label>
-            <select id="compareA"></select>
-          </div>
-          <div>
-            <label for="compareB">Seed B</label>
-            <select id="compareB"></select>
-          </div>
-        </div>
-
-        <table class="compare-table">
-          <thead>
-          <tr>
-            <th>Trait</th>
-            <th id="colA">Seed A</th>
-            <th id="colB">Seed B</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>Type</td>
-            <td id="aType">–</td>
-            <td id="bType">–</td>
-          </tr>
-          <tr>
-            <td>Climate fit</td>
-            <td id="aClimate">–</td>
-            <td id="bClimate">–</td>
-          </tr>
-          <tr>
-            <td>Colour</td>
-            <td id="aColour">–</td>
-            <td id="bColour">–</td>
-          </tr>
-          <tr>
-            <td>Notes</td>
-            <td id="aNotes">–</td>
-            <td id="bNotes">–</td>
-          </tr>
-          </tbody>
-        </table>
-
-        <div class="image-analyser">
-          <h2>Image colour analyser (prototype)</h2>
-          <p>
-            Upload a seed photo. The tool finds an average colour and guesses a simple category.
-            This is only a demo – it does not identify real varieties.
-          </p>
-
-          <label for="imageInput">Upload image</label>
-          <input type="file" id="imageInput" accept="image/*" />
-
-          <img id="previewImage" class="image-preview" alt="" />
-
-          <div id="analysisArea" class="analysis-result"></div>
-          <canvas id="hiddenCanvas" style="display:none;"></canvas>
-        </div>
-      </div>
+  <section class="section">
+    <h2 data-i18n="compare_title">⚖️ Compare seeds</h2>
+    <div class="card">
+      <p data-i18n="compare_info">
+        Select two seeds using the checkboxes in the list and click the button below.
+      </p>
+      <button class="btn btn-main" id="compare-btn" data-i18n="compare_btn">
+        Compare selected
+      </button>
+      <div id="compare-output" class="grid-2" style="margin-top: 16px;"></div>
     </div>
   </section>
 </main>
 
 <footer>
-  Seed Diversity Project • Created for school • <span>Student Website</span>
+  <span data-i18n="footer_text">
+    Seed Diversity Project • Created for school • Student Website
+  </span>
 </footer>
 
-<!-- ========= JavaScript for seed tools ========= -->
 <script>
-  // Simple seed dataset for this prototype
+  // ---- Seed data (English names; tool text translated) ----
   const seeds = [
     {
-      id: "ragi",
-      name: "Finger millet (Ragi)",
-      category: "grain",
+      id: "seed1",
+      name: "Kagga Rice",
+      crop: "rice",
+      climate: "flood",
+      trait: "flood",
+      maturity: "Medium",
+      notes: "Traditional rice that tolerates waterlogging and coastal conditions."
+    },
+    {
+      id: "seed2",
+      name: "Aromatic Red Rice",
+      crop: "rice",
+      climate: "wet",
+      trait: "aroma",
+      maturity: "Medium-long",
+      notes: "Red-coloured grain with strong aroma and higher fibre."
+    },
+    {
+      id: "seed3",
+      name: "Finger Millet (Ragi)",
+      crop: "millet",
       climate: "dry",
-      colour: "dark",
-      tags: ["drought tolerant", "calcium rich"],
-      notes: "Traditional millet that grows well in low rainfall and poor soils."
+      trait: "drought",
+      maturity: "Short",
+      notes: "Hardy millet that grows in low rainfall areas and poor soils."
     },
     {
-      id: "kodo",
-      name: "Kodo millet",
-      category: "grain",
+      id: "seed4",
+      name: "Little Millet",
+      crop: "millet",
       climate: "dry",
-      colour: "light",
-      tags: ["resilient", "coarse cereal"],
-      notes: "Hardy cereal used in dry regions; can replace rice in many dishes."
+      trait: "drought",
+      maturity: "Medium",
+      notes: "Tolerates heat and gives small, nutritious grains."
     },
     {
-      id: "rice-red",
-      name: "Traditional red rice",
-      category: "grain",
-      climate: "humid",
-      colour: "red-brown",
-      tags: ["iron rich"],
-      notes: "Coloured rice variety with more fibre and minerals than polished white rice."
-    },
-    {
-      id: "black-gram",
-      name: "Black gram (Urad)",
-      category: "pulse",
-      climate: "moderate",
-      colour: "dark",
-      tags: ["protein", "nitrogen fixer"],
-      notes: "Important pulse crop; helps improve soil fertility when grown in rotation."
-    },
-    {
-      id: "pigeon-pea",
-      name: "Pigeon pea (Toor dal)",
-      category: "pulse",
+      id: "seed5",
+      name: "Pigeon Pea",
+      crop: "pulse",
       climate: "dry",
-      colour: "light",
-      tags: ["deep rooted"],
-      notes: "Common dal crop; deep roots help it survive dry spells and hold soil."
+      trait: "soil",
+      maturity: "Long",
+      notes: "Deep roots help improve soil structure; provides protein-rich dal."
     },
     {
-      id: "sesame",
-      name: "Sesame",
-      category: "oilseed",
-      climate: "dry",
-      colour: "light",
-      tags: ["oilseed", "small seed"],
-      notes: "Tiny oilseed used in sweets and chutneys; many local varieties exist."
-    },
-    {
-      id: "brinjal",
-      name: "Local brinjal mix",
-      category: "vegetable",
-      climate: "moderate",
-      colour: "dark",
-      tags: ["many colours"],
-      notes: "Represents the huge range of shapes and colours seen in traditional brinjal."
+      id: "seed6",
+      name: "Black Gram",
+      crop: "pulse",
+      climate: "wet",
+      trait: "soil",
+      maturity: "Short",
+      notes: "Fixes nitrogen in the soil and used in many South Indian dishes."
     }
   ];
 
-  // ---------- Rendering seed cards ----------
-  const galleryEl = document.getElementById("seedGallery");
-  const filterCategory = document.getElementById("filterCategory");
-  const filterClimate = document.getElementById("filterClimate");
-  const filterColour = document.getElementById("filterColour");
-  const filterSearch = document.getElementById("filterSearch");
+  const seedListEl = document.getElementById("seed-list");
+  const compareBtn = document.getElementById("compare-btn");
+  const compareOutput = document.getElementById("compare-output");
 
-  function passesFilters(seed) {
-    if (filterCategory.value && seed.category !== filterCategory.value) return false;
-    if (filterClimate.value && seed.climate !== filterClimate.value) return false;
-    if (filterColour.value && seed.colour !== filterColour.value) return false;
-    const term = filterSearch.value.trim().toLowerCase();
-    if (term && !seed.name.toLowerCase().includes(term)) return false;
-    return true;
-  }
+  function renderSeedList() {
+    const crop = document.getElementById("filter-crop").value;
+    const climate = document.getElementById("filter-climate").value;
+    const trait = document.getElementById("filter-trait").value;
 
-  function renderSeeds() {
-    galleryEl.innerHTML = "";
-    const filtered = seeds.filter(passesFilters);
-    if (filtered.length === 0) {
-      galleryEl.innerHTML = "<p style='font-size:13px;color:#60747f;'>No seeds match these filters yet.</p>";
-      return;
-    }
+    seedListEl.innerHTML = "";
+
+    const filtered = seeds.filter(seed => {
+      const cropOk = crop === "all" || seed.crop === crop;
+      const climateOk = climate === "all" || seed.climate === climate;
+      const traitOk =
+        trait === "all" ||
+        (trait === "drought" && seed.trait === "drought") ||
+        (trait === "aroma" && seed.trait === "aroma") ||
+        (trait === "soil" && seed.trait === "soil");
+      return cropOk && climateOk && traitOk;
+    });
+
     filtered.forEach(seed => {
       const card = document.createElement("article");
-      card.className = "card seed-card";
+      card.className = "card";
       card.innerHTML = `
-        <h3>${seed.name}</h3>
-        <div class="seed-meta">
-          Type: ${nice(seed.category)} • Climate: ${nice(seed.climate)} • Colour: ${nice(seed.colour)}
-        </div>
-        <p>${seed.notes}</p>
-        <div class="seed-tags">
-          ${seed.tags.map(t => `<span class="tag-pill">${t}</span>`).join("")}
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px;">
+          <div>
+            <h3>${seed.name}</h3>
+            <p><strong>Crop:</strong> ${seed.crop}</p>
+            <p><strong>Climate:</strong> ${seed.climate}</p>
+            <p><strong>Key trait:</strong> ${seed.trait}</p>
+            <p><strong>Maturity:</strong> ${seed.maturity}</p>
+            <p>${seed.notes}</p>
+          </div>
+          <div>
+            <label>
+              <input type="checkbox" class="compare-checkbox" data-seed-id="${seed.id}" />
+              Compare
+            </label>
+          </div>
         </div>
       `;
-      galleryEl.appendChild(card);
+      seedListEl.appendChild(card);
     });
   }
 
-  function nice(value) {
-    const map = {
-      grain: "Grain / cereal",
-      pulse: "Pulse",
-      vegetable: "Vegetable",
-      oilseed: "Oilseed",
-      dry: "Dry / low rainfall",
-      moderate: "Moderate",
-      humid: "Humid",
-      light: "Light / pale",
-      "red-brown": "Red / brown",
-      dark: "Dark"
-    };
-    return map[value] || value;
-  }
+  document.getElementById("filter-crop").addEventListener("change", renderSeedList);
+  document.getElementById("filter-climate").addEventListener("change", renderSeedList);
+  document.getElementById("filter-trait").addEventListener("change", renderSeedList);
 
-  [filterCategory, filterClimate, filterColour].forEach(sel =>
-    sel.addEventListener("change", renderSeeds)
-  );
-  filterSearch.addEventListener("input", renderSeeds);
+  compareBtn.addEventListener("click", () => {
+    const checked = Array.from(
+      document.querySelectorAll(".compare-checkbox:checked")
+    ).map(cb => cb.dataset.seedId);
 
-  // ---------- Compare seeds ----------
-  const compareA = document.getElementById("compareA");
-  const compareB = document.getElementById("compareB");
-
-  function populateCompareSelects() {
-    seeds.forEach(seed => {
-      const optA = document.createElement("option");
-      optA.value = seed.id;
-      optA.textContent = seed.name;
-      compareA.appendChild(optA);
-
-      const optB = document.createElement("option");
-      optB.value = seed.id;
-      optB.textContent = seed.name;
-      compareB.appendChild(optB);
-    });
-
-    if (seeds.length >= 2) {
-      compareA.value = seeds[0].id;
-      compareB.value = seeds[1].id;
-      updateCompare();
+    if (checked.length !== 2) {
+      compareOutput.innerHTML =
+        "<p>Please select exactly two seeds to compare.</p>";
+      return;
     }
-  }
 
-  function updateCompare() {
-    const a = seeds.find(s => s.id === compareA.value);
-    const b = seeds.find(s => s.id === compareB.value);
-    document.getElementById("colA").textContent = a ? a.name : "Seed A";
-    document.getElementById("colB").textContent = b ? b.name : "Seed B";
+    const [a, b] = checked.map(id => seeds.find(s => s.id === id));
 
-    document.getElementById("aType").textContent = a ? nice(a.category) : "–";
-    document.getElementById("bType").textContent = b ? nice(b.category) : "–";
-
-    document.getElementById("aClimate").textContent = a ? nice(a.climate) : "–";
-    document.getElementById("bClimate").textContent = b ? nice(b.climate) : "–";
-
-    document.getElementById("aColour").textContent = a ? nice(a.colour) : "–";
-    document.getElementById("bColour").textContent = b ? nice(b.colour) : "–";
-
-    document.getElementById("aNotes").textContent = a ? a.notes : "–";
-    document.getElementById("bNotes").textContent = b ? b.notes : "–";
-  }
-
-  compareA.addEventListener("change", updateCompare);
-  compareB.addEventListener("change", updateCompare);
-
-  // ---------- Image colour analyser ----------
-  const imageInput = document.getElementById("imageInput");
-  const previewImage = document.getElementById("previewImage");
-  const analysisArea = document.getElementById("analysisArea");
-  const hiddenCanvas = document.getElementById("hiddenCanvas");
-  const ctx = hiddenCanvas.getContext("2d");
-
-  imageInput.addEventListener("change", () => {
-    const file = imageInput.files[0];
-    if (!file) return;
-
-    const img = new Image();
-    img.onload = () => {
-      const maxW = 220;
-      const scale = Math.min(maxW / img.width, 1);
-      const w = img.width * scale;
-      const h = img.height * scale;
-
-      hiddenCanvas.width = w;
-      hiddenCanvas.height = h;
-      ctx.drawImage(img, 0, 0, w, h);
-
-      const imageData = ctx.getImageData(0, 0, w, h);
-      const data = imageData.data;
-      let r = 0, g = 0, b = 0, count = 0;
-
-      for (let i = 0; i < data.length; i += 4) {
-        r += data[i];
-        g += data[i + 1];
-        b += data[i + 2];
-        count++;
-      }
-
-      r = Math.round(r / count);
-      g = Math.round(g / count);
-      b = Math.round(b / count);
-
-      let guess = "mixed seeds / uncertain type";
-      if (g > r && g > b) {
-        guess = "likely leaf / green seed image";
-      } else if (r > g && r > b) {
-        guess = "likely reddish or brownish seeds";
-      } else if (b > r && b > g) {
-        guess = "likely dark seeds or soil background";
-      }
-
-      analysisArea.innerHTML = `
-        <p><strong>Average colour (RGB):</strong> ${r}, ${g}, ${b}</p>
-        <p><strong>Simple guess:</strong> ${guess}</p>
-        <p><em>Note:</em> This is only a prototype. It does not identify real varieties, it just shows how basic image processing could support seed documentation.</p>
-      `;
-    };
-
-    img.src = URL.createObjectURL(file);
-    previewImage.src = img.src;
-    previewImage.alt = "Uploaded seed image preview";
+    compareOutput.innerHTML = `
+      <article class="card">
+        <h3>${a.name}</h3>
+        <p><strong>Crop:</strong> ${a.crop}</p>
+        <p><strong>Climate:</strong> ${a.climate}</p>
+        <p><strong>Key trait:</strong> ${a.trait}</p>
+        <p><strong>Maturity:</strong> ${a.maturity}</p>
+        <p>${a.notes}</p>
+      </article>
+      <article class="card">
+        <h3>${b.name}</h3>
+        <p><strong>Crop:</strong> ${b.crop}</p>
+        <p><strong>Climate:</strong> ${b.climate}</p>
+        <p><strong>Key trait:</strong> ${b.trait}</p>
+        <p><strong>Maturity:</strong> ${b.maturity}</p>
+        <p>${b.notes}</p>
+      </article>
+    `;
   });
 
-  // ---------- Initialise ----------
-  renderSeeds();
-  populateCompareSelects();
+  // ------- Language system (same style as other pages) -------
+  const translations = {
+    en: {
+      site_title: "Seed Diversity",
+      site_subtitle: "School Project Website",
+      nav_home: "Home",
+      nav_what: "What is it?",
+      nav_why: "Why it matters",
+      nav_threats: "Threats",
+      nav_actions: "Actions",
+      nav_project: "My project",
+      nav_tools: "Seed tools",
+      nav_locator: "Store locator",
+      label_language: "Language:",
+
+      title_tools: "🛠️ Seed tools – prototype explorer",
+      subtitle_tools:
+        "This page is a prototype. It does not use real farmer data yet, but it shows how filters and comparisons could help choose seeds for different conditions.",
+      tools_callout_title: "How to use:",
+      tools_callout_body:
+        "Use the filters to narrow down example seeds by crop type and climate. Then select two seeds and click “Compare selected” to see them side by side.",
+
+      filters_title: "🔍 Filters",
+      filter_crop_label: "Crop type",
+      filter_any_crop: "Any",
+      filter_climate_label: "Climate",
+      filter_any_climate: "Any",
+      filter_climate_dry: "Dry / low rainfall",
+      filter_climate_wet: "Wet / high rainfall",
+      filter_climate_flood: "Flood-prone",
+      filter_trait_label: "Key trait",
+      filter_any_trait: "Any",
+      list_title: "🌾 Example seeds",
+      compare_title: "⚖️ Compare seeds",
+      compare_info:
+        "Select two seeds using the checkboxes in the list and click the button below.",
+      compare_btn: "Compare selected",
+
+      footer_text: "Seed Diversity Project • Created for school • Student Website"
+    },
+
+    te: {
+      site_title: "విత్తన వైవిధ్యం",
+      site_subtitle: "పాఠశాల ప్రాజెక్ట్ వెబ్‌సైట్",
+      nav_home: "మొదటి పేజీ",
+      nav_what: "ఏమిటి?",
+      nav_why: "ఎందుకు ముఖ్యం?",
+      nav_threats: "ముప్పులు",
+      nav_actions: "చర్యలు",
+      nav_project: "నా ప్రాజెక్ట్",
+      nav_tools: "విత్తన సాధనాలు",
+      nav_locator: "దుకాణ మ్యాప్",
+      label_language: "భాష:",
+
+      title_tools: "🛠️ Seed tools – ప్రోటోటైప్ ఎక్స్‌ప్లోరర్",
+      subtitle_tools:
+        "ఈ పేజీ ప్రోటోటైప్ మాత్రమే. ఇది ఇంకా నిజమైన రైతు డేటాతో పనిచేయదు, కానీ భవిష్యత్తులో ఫిల్టర్లు, పోలికలు విత్తన ఎంపికకు ఎలా సహాయపడగలవో చూపిస్తుంది.",
+      tools_callout_title: "ఎలా ఉపయోగించాలి:",
+      tools_callout_body:
+        "పంట రకం, వాతావరణం ఆధారంగా ఉదాహరణ విత్తనాలను తగ్గించడానికి ఫిల్టర్‌లను ఉపయోగించండి. తర్వాత రెండు విత్తనాలను ఎంచుకుని 'Compare selected'పై క్లిక్ చేసి వాటిని పక్కపక్కన చూడండి.",
+
+      filters_title: "🔍 ఫిల్టర్లు",
+      filter_crop_label: "పంట రకం",
+      filter_any_crop: "ఏదైనా",
+      filter_climate_label: "వాతావరణం",
+      filter_any_climate: "ఏదైనా",
+      filter_climate_dry: "ఎండ / తక్కువ వర్షపాతం",
+      filter_climate_wet: "తడిగా / అధిక వర్షపాతం",
+      filter_climate_flood: "వరదల ముప్పు ఉండే ప్రాంతం",
+      filter_trait_label: "ప్రధాన లక్షణం",
+      filter_any_trait: "ఏదైనా",
+      list_title: "🌾 ఉదాహరణ విత్తనాలు",
+      compare_title: "⚖️ విత్తనాల పోలిక",
+      compare_info:
+        "జాబితాలోని చెక్‌బాక్స్‌లను ఉపయోగించి రెండు విత్తనాలను ఎంచుకుని, క్రింద ఉన్న బటన్‌పై క్లిక్ చేయండి.",
+      compare_btn: "ఎంచుకున్న విత్తనాలను పోల్చండి",
+
+      footer_text: "విత్తన వైవిధ్య ప్రాజెక్ట్ • పాఠశాల కోసం రూపొందించబడింది • విద్యార్థి వెబ్‌సైట్"
+    },
+
+    ta: {
+      site_title: "விதை பல்வகைமை",
+      site_subtitle: "பள்ளி திட்ட இணையதளம்",
+      nav_home: "முதல் பக்கம்",
+      nav_what: "என்னது?",
+      nav_why: "ஏன் முக்கியம்?",
+      nav_threats: "அபாயங்கள்",
+      nav_actions: "நடவடிக்கைகள்",
+      nav_project: "என் திட்டம்",
+      nav_tools: "விதை கருவிகள்",
+      nav_locator: "கடை வரைபடம்",
+      label_language: "மொழி:",
+
+      title_tools: "🛠️ Seed tools – மாதிரி ஆய்வு கருவி",
+      subtitle_tools:
+        "இந்தப் பக்கம் ஒரு மாதிரி (prototype) மட்டுமே. இது இன்னும் உண்மையான விவசாயி தரவுகளை பயன்படுத்தவில்லை; ஆனால் எதிர்காலத்தில் வடிகட்டிகள் மற்றும் ஒப்பீடுகள் எவ்வாறு விதைத் தேர்வுக்கு உதவ முடியும் என்பதை காட்டுகிறது.",
+      tools_callout_title: "எப்படி பயன்படுத்துவது:",
+      tools_callout_body:
+        "பயிர் வகை மற்றும் காலநிலையைப் பொறுத்து உதாரண விதைகளை குறைக்க வடிகட்டிகளைப் பயன்படுத்துங்கள். பின்னர் இரண்டு விதைகளைத் தேர்ந்தெடுத்து 'Compare selected' ஐ அழுத்தி பக்கமிட்டு ஒப்பிடுங்கள்.",
+
+      filters_title: "🔍 வடிகட்டிகள்",
+      filter_crop_label: "பயிர் வகை",
+      filter_any_crop: "எதுவும்",
+      filter_climate_label: "காலநிலை",
+      filter_any_climate: "எதுவும்",
+      filter_climate_dry: "உலர் / குறைந்த மழை",
+      filter_climate_wet: "ஈரமான / அதிக மழை",
+      filter_climate_flood: "வெள்ளம் ஏற்படும் பகுதி",
+      filter_trait_label: "முக்கிய குணாதிசயம்",
+      filter_any_trait: "எதுவும்",
+      list_title: "🌾 உதாரண விதைகள்",
+      compare_title: "⚖️ விதைகளை ஒப்பிடுங்கள்",
+      compare_info:
+        "பட்டியலில் உள்ள இரண்டு விதைகளைச் checkbox மூலம் தேர்ந்தெடுத்து, கீழே உள்ள பொத்தானை அழுத்துங்கள்.",
+      compare_btn: "தேர்ந்தெடுத்ததை ஒப்பிடுங்கள்",
+
+      footer_text: "விதை பல்வகைமை திட்டம் • பள்ளிக்காக உருவாக்கப்பட்டது • மாணவர் இணையதளம்"
+    }
+  };
+
+  const langButtons = document.querySelectorAll(".lang-btn");
+
+  function setLanguage(lang) {
+    document.documentElement.setAttribute("lang", lang);
+    langButtons.forEach(btn => {
+      btn.classList.toggle("lang-active", btn.dataset.lang === lang);
+    });
+
+    const dict = translations[lang];
+    Object.keys(dict).forEach(key => {
+      document.querySelectorAll(`[data-i18n="${key}"]`).forEach(el => {
+        el.textContent = dict[key];
+      });
+    });
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  });
+
+  // Initial render + default language
+  renderSeedList();
+  setLanguage("en");
 </script>
 
 </body>
