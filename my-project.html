@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My Project – Seed Diversity Website</title>
+  <title>My Seed Diversity Project</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,127 +11,311 @@
   <div class="brand">
     <div class="brand-logo">🌱</div>
     <div class="brand-text">
-      <span>Seed Diversity</span>
-      <span>School Project Website</span>
+      <span data-i18n="site_title">Seed Diversity</span>
+      <span data-i18n="site_subtitle">School Project Website</span>
     </div>
   </div>
 
   <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="what-is-seed-diversity.html">What is it?</a>
-    <a href="why-it-matters.html">Why it matters</a>
-    <a href="threats.html">Threats</a>
-    <a href="how-we-can-help.html">Actions</a>
-    <a href="my-project.html" class="active">My project</a>
-    <a href="seed-tools.html">Seed tools</a>
-    <a href="store-locator.html">Store locator</a>
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="what-is-seed-diversity.html" data-i18n="nav_what">What is it?</a>
+    <a href="why-it-matters.html" data-i18n="nav_why">Why it matters</a>
+    <a href="threats.html" data-i18n="nav_threats">Threats</a>
+    <a href="how-we-can-help.html" data-i18n="nav_actions">Actions</a>
+    <a href="my-project.html" class="active" data-i18n="nav_project">My project</a>
+    <a href="seed-tools.html" data-i18n="nav_tools">Seed tools</a>
+    <a href="store-locator.html" data-i18n="nav_locator">Store locator</a>
   </nav>
 
   <div class="language-switch">
-    <!-- optional: hook this page into the same EN/ES system later -->
-    <span>Language: EN</span>
+    <span data-i18n="label_language">Language:</span>
+    <button class="lang-btn lang-active" data-lang="en">EN</button>
+    <span>/</span>
+    <button class="lang-btn" data-lang="te">TE</button>
+    <span>/</span>
+    <button class="lang-btn" data-lang="ta">TA</button>
   </div>
 </header>
 
 <main class="wrapper">
-  <h1 class="page-title">📚 My Seed Diversity Project</h1>
-  <p class="page-subtitle">
-    This page explains the goal of my project, how I designed the website and tools,
-    and what I learned about both science and coding.
+  <h1 class="page-title" data-i18n="title_project">📚 My seed diversity project</h1>
+  <p class="page-subtitle" data-i18n="subtitle_project">
+    This website is part of my school project on seed diversity. It combines research,
+    digital design and simple prototype tools for farmers and students.
   </p>
 
   <section class="section">
-    <h2>🎯 Project aim</h2>
-    <div class="card">
-      <p>
-        My aim was to create a clear, student-friendly website that explains seed diversity
-        and shows why it is important for food security, climate resilience and culture.
-        I also wanted to build simple interactive tools that make the topic feel real:
-        a seed gallery with filters, a compare tool and a store locator prototype.
-      </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>🧩 Design choices</h2>
-    <div class="grid-2">
-      <article class="card">
-        <h3>Layout & navigation</h3>
-        <p>
-          I used a single navigation bar at the top of every page so visitors always know
-          where they are. The pages follow a logical order: first definitions, then why it
-          matters, then threats, actions and finally my project work and tools.
-        </p>
-      </article>
-      <article class="card">
-        <h3>Colours & icons</h3>
-        <p>
-          I chose green tones and simple icons to connect the website to plants and farming
-          without making it visually noisy. Cards and spacing keep the text easy to scan.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>🧪 Interactive tools</h2>
-    <div class="grid-2">
-      <article class="card">
-        <h3>Seed tools page</h3>
-        <p>
-          I designed the seed tools page to act like a mini "lab" where users can explore
-          different seeds. They can filter by type, climate and colour, compare two seeds
-          side by side and try a simple colour-based image analyser prototype.
-        </p>
-      </article>
-      <article class="card">
-        <h3>Store locator prototype</h3>
-        <p>
-          The store locator uses an interactive map focused on the Hyderabad region.
-          It is a prototype that could be expanded to more regions in the future.
-          The goal is to show that seed diversity is also about real places and people,
-          not just theory.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>🔍 What I learned</h2>
+    <h2 data-i18n="section1_title">🎯 Project goals</h2>
     <div class="card">
       <ul>
-        <li>
-          <strong>Science:</strong> I understood how losing local varieties makes our food
-          system more fragile and how traditional crops can help farmers face climate change.
+        <li data-i18n="section1_li1">
+          Explain seed diversity clearly for students and teachers using simple language.
         </li>
-        <li>
-          <strong>Coding:</strong> I learned how to structure pages with HTML, style them
-          with CSS, host them using GitHub Pages and add interactivity with JavaScript and
-          libraries like Leaflet.
+        <li data-i18n="section1_li2">
+          Show why seed diversity connects science, climate, food and culture.
         </li>
-        <li>
-          <strong>Project skills:</strong> I practised planning, testing, debugging and
-          improving the design based on how real users might interact with the site.
+        <li data-i18n="section1_li3">
+          Design prototype tools that could one day support real farmers.
         </li>
       </ul>
     </div>
   </section>
 
   <section class="section">
-    <h2>➡️ Possible next steps</h2>
+    <h2 data-i18n="section2_title">🔍 Research and learning</h2>
+    <div class="grid-2">
+      <article class="card">
+        <h3 data-i18n="section2_card1_title">Research questions</h3>
+        <p data-i18n="section2_card1_body">
+          • What is seed diversity and how is it measured?<br />
+          • Why are traditional varieties disappearing?<br />
+          • How can digital tools help farmers choose and access diverse seeds?
+        </p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="section2_card2_title">Key sources</h3>
+        <p data-i18n="section2_card2_body">
+          I used reports from international organisations, research articles,
+          farmer case studies and educational websites to understand both science
+          and real-life examples.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="section3_title">🖥️ Digital prototype features</h2>
+    <div class="grid-3">
+      <article class="card">
+        <h3 data-i18n="section3_card1_title">Seed tools</h3>
+        <p data-i18n="section3_card1_body">
+          A small interactive tool where users can filter example seeds by
+          crop type, climate and traits, and compare two seeds side by side.
+        </p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="section3_card2_title">Store locator</h3>
+        <p data-i18n="section3_card2_body">
+          A prototype map focused on the Hyderabad region that shows sample seed
+          store locations, to imagine how farmers could find nearby options.
+        </p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="section3_card3_title">Multilingual content</h3>
+        <p data-i18n="section3_card3_body">
+          The site can switch between English, Telugu and Tamil so that
+          more students and families can understand the key ideas.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="section4_title">🧠 Reflection</h2>
     <div class="card">
-      <p>
-        If I had more time, I would like to add more real seed varieties from different
-        parts of India, connect the map to real seed banks and translate all pages into
-        several languages so that more people can use the website.
+      <p data-i18n="section4_p1">
+        Building this website taught me how complex seed diversity really is.
+        It is not just a science topic, but also a social, cultural and economic issue.
+      </p>
+      <p data-i18n="section4_p2">
+        In the future, I would like to add real datasets, more detailed farmer
+        profiles and improved decision-support tools that can work on low-bandwidth
+        phones in rural areas.
       </p>
     </div>
   </section>
 </main>
 
 <footer>
-  Seed Diversity Project • Created for school • <span>Student Website</span>
+  <span data-i18n="footer_text">
+    Seed Diversity Project • Created for school • Student Website
+  </span>
 </footer>
+
+<script>
+  const translations = {
+    en: {
+      site_title: "Seed Diversity",
+      site_subtitle: "School Project Website",
+      nav_home: "Home",
+      nav_what: "What is it?",
+      nav_why: "Why it matters",
+      nav_threats: "Threats",
+      nav_actions: "Actions",
+      nav_project: "My project",
+      nav_tools: "Seed tools",
+      nav_locator: "Store locator",
+      label_language: "Language:",
+
+      title_project: "📚 My seed diversity project",
+      subtitle_project:
+        "This website is part of my school project on seed diversity. It combines research, digital design and simple prototype tools for farmers and students.",
+
+      section1_title: "🎯 Project goals",
+      section1_li1:
+        "Explain seed diversity clearly for students and teachers using simple language.",
+      section1_li2:
+        "Show why seed diversity connects science, climate, food and culture.",
+      section1_li3:
+        "Design prototype tools that could one day support real farmers.",
+
+      section2_title: "🔍 Research and learning",
+      section2_card1_title: "Research questions",
+      section2_card1_body:
+        "• What is seed diversity and how is it measured?\n• Why are traditional varieties disappearing?\n• How can digital tools help farmers choose and access diverse seeds?",
+      section2_card2_title: "Key sources",
+      section2_card2_body:
+        "I used reports from international organisations, research articles, farmer case studies and educational websites to understand both science and real-life examples.",
+
+      section3_title: "🖥️ Digital prototype features",
+      section3_card1_title: "Seed tools",
+      section3_card1_body:
+        "A small interactive tool where users can filter example seeds by crop type, climate and traits, and compare two seeds side by side.",
+      section3_card2_title: "Store locator",
+      section3_card2_body:
+        "A prototype map focused on the Hyderabad region that shows sample seed store locations, to imagine how farmers could find nearby options.",
+      section3_card3_title: "Multilingual content",
+      section3_card3_body:
+        "The site can switch between English, Telugu and Tamil so that more students and families can understand the key ideas.",
+
+      section4_title: "🧠 Reflection",
+      section4_p1:
+        "Building this website taught me how complex seed diversity really is. It is not just a science topic, but also a social, cultural and economic issue.",
+      section4_p2:
+        "In the future, I would like to add real datasets, more detailed farmer profiles and improved decision-support tools that can work on low-bandwidth phones in rural areas.",
+
+      footer_text: "Seed Diversity Project • Created for school • Student Website"
+    },
+
+    te: {
+      site_title: "విత్తన వైవిధ్యం",
+      site_subtitle: "పాఠశాల ప్రాజెక్ట్ వెబ్‌సైట్",
+      nav_home: "మొదటి పేజీ",
+      nav_what: "ఏమిటి?",
+      nav_why: "ఎందుకు ముఖ్యం?",
+      nav_threats: "ముప్పులు",
+      nav_actions: "చర్యలు",
+      nav_project: "నా ప్రాజెక్ట్",
+      nav_tools: "విత్తన సాధనాలు",
+      nav_locator: "దుకాణ మ్యాప్",
+      label_language: "భాష:",
+
+      title_project: "📚 నా విత్తన వైవిధ్య ప్రాజెక్ట్",
+      subtitle_project:
+        "ఈ వెబ్‌సైట్ నా పాఠశాల ప్రాజెక్ట్‌లో భాగం. ఇందులో పరిశోధన, డిజిటల్ డిజైన్, రైతులు మరియు విద్యార్థుల కోసం చిన్న ప్రోటోటైప్ సాధనాలు ఉన్నాయి.",
+
+      section1_title: "🎯 ప్రాజెక్ట్ లక్ష్యాలు",
+      section1_li1:
+        "విద్యార్థులు, ఉపాధ్యాయులకు సులభమైన భాషలో విత్తన వైవిధ్యాన్ని వివరించడం.",
+      section1_li2:
+        "విత్తన వైవిధ్యం శాస్త్రం, వాతావరణం, ఆహారం, సంస్కృతిని ఎలా కలుపుతుందో చూపించడం.",
+      section1_li3:
+        "ఒకరోజు నిజమైన రైతులకు ఉపయోగపడే ప్రోటోటైప్ డిజిటల్ సాధనాలను రూపొందించడం.",
+
+      section2_title: "🔍 పరిశోధన మరియు నేర్చుకున్న విషయాలు",
+      section2_card1_title: "పరిశోధన ప్రశ్నలు",
+      section2_card1_body:
+        "• విత్తన వైవిధ్యం అంటే ఏమిటి? దాన్ని ఎలా కొలుస్తారు?\n• సంప్రదాయ రకాలెందుకు కనుమరుగవుతున్నాయి?\n• డిజిటల్ టూల్స్ రైతులకు విత్తనాలను ఎంచుకోవడంలో, పొందడంలో ఎలా సహాయపడగలవు?",
+      section2_card2_title: "ప్రధాన మూలాలు",
+      section2_card2_body:
+        "శాస్త్రీయ నివేదికలు, పరిశోధనా పత్రాలు, రైతుల కథలు, విద్యా వెబ్‌సైట్లను ఉపయోగించి శాస్త్రం మరియు నిజ జీవితం ఉదాహరణలను అర్థం చేసుకున్నాను.",
+
+      section3_title: "🖥️ డిజిటల్ ప్రోటోటైప్ ఫీచర్లు",
+      section3_card1_title: "Seed tools",
+      section3_card1_body:
+        "ఉదాహరణ విత్తనాలను పంట రకం, వాతావరణం, లక్షణాల ప్రకారం ఫిల్టర్ చేయడానికి, రెండు విత్తనాలను పక్కపక్కన పోల్చడానికి చిన్న ఇంటరాక్టివ్ సాధనం.",
+      section3_card2_title: "Store locator",
+      section3_card2_body:
+        "హైదరాబాద్ ప్రాంతాన్ని కేంద్రంగా తీసుకున్న ప్రోటోటైప్ మ్యాప్, విత్తన దుకాణాల నమూనా లొకేషన్‌లను చూపిస్తుంది – రైతులు సమీప ఎంపికలను ఎలా కనుగొనగలరో ఊహించడానికి ఇది సహాయపడుతుంది.",
+      section3_card3_title: "బహుభాషా కంటెంట్",
+      section3_card3_body:
+        "ఈ సైట్‌ను ఇంగ్లీష్, తెలుగు, తమిళంలో మార్చుకోవచ్చు; దీంతో మరిన్ని విద్యార్థులు, కుటుంబాలు మౌలిక ఆలోచనలను అర్థం చేసుకోవచ్చు.",
+
+      section4_title: "🧠 ఆత్మపరిశీలన",
+      section4_p1:
+        "ఈ వెబ్‌సైట్‌ని తయారు చేయడం ద్వారా విత్తన వైవిధ్యం ఎంత సంక్లిష్టమైన విషయంో నాకు స్పష్టమైంది. ఇది కేవలం శాస్త్రం మాత్రమే కాదు, సామాజిక, సాంస్కృతిక, ఆర్థిక అంశాలతో కూడిన విషయం.",
+      section4_p2:
+        "భవిష్యత్తులో నిజమైన డేటాసెట్లు, రైతుల వివరమైన ప్రొఫైళ్లు, తక్కువ ఇంటర్నెట్ ఉన్న గ్రామీణ ప్రాంతాల్లో పనిచేయగల అధునాతన డిసిషన్ సపోర్ట్ టూల్స్‌ను చేర్చాలనుకుంటున్నాను.",
+
+      footer_text: "విత్తన వైవిధ్య ప్రాజెక్ట్ • పాఠశాల కోసం రూపొందించబడింది • విద్యార్థి వెబ్‌సైట్"
+    },
+
+    ta: {
+      site_title: "விதை பல்வகைமை",
+      site_subtitle: "பள்ளி திட்ட இணையதளம்",
+      nav_home: "முதல் பக்கம்",
+      nav_what: "என்னது?",
+      nav_why: "ஏன் முக்கியம்?",
+      nav_threats: "அபாயங்கள்",
+      nav_actions: "நடவடிக்கைகள்",
+      nav_project: "என் திட்டம்",
+      nav_tools: "விதை கருவிகள்",
+      nav_locator: "கடை வரைபடம்",
+      label_language: "மொழி:",
+
+      title_project: "📚 என் விதை பல்வகைமை திட்டம்",
+      subtitle_project:
+        "இந்த இணையதளம் என் பள்ளித் திட்டத்தின் ஒரு பகுதி. இது ஆராய்ச்சி, டிஜிட்டல் வடிவமைப்பு மற்றும் விவசாயிகள், மாணவர்களுக்கான எளிய மாதிரி கருவிகளை இணைக்கிறது.",
+
+      section1_title: "🎯 திட்டக் குறிக்கோள்கள்",
+      section1_li1:
+        "மாணவர்கள் மற்றும் ஆசிரியர்கள் புரிந்துகொள்ளும் எளிய மொழியில் விதை பல்வகைமையை விளக்குதல்.",
+      section1_li2:
+        "விதை பல்வகைமை அறிவியல், காலநிலை, உணவு மற்றும் பண்பாட்டை எவ்வாறு இணைக்கிறது என்பதை காட்டுதல்.",
+      section1_li3:
+        "ஒருநாள் உண்மையான விவசாயிகளுக்கு உதவக்கூடிய டிஜிட்டல் மாதிரி கருவிகளை வடிவமைத்தல்.",
+
+      section2_title: "🔍 ஆய்வும் கற்றலும்",
+      section2_card1_title: "ஆய்வு கேள்விகள்",
+      section2_card1_body:
+        "• விதை பல்வகைமை என்றால் என்ன? அதை எவ்வாறு அளவிடலாம்?\n• பாரம்பரிய வகைகள் ஏன் மறைந்துகொண்டிருக்கின்றன?\n• டிஜிட்டல் கருவிகள் விவசாயிகள் விதைகளைத் தேர்ந்தெடுக்கவும் பெறவும் எவ்வாறு உதவ முடியும்?",
+      section2_card2_title: "முக்கிய ஆதாரங்கள்",
+      section2_card2_body:
+        "சர்வதேச அமைப்புகளின் அறிக்கைகள், ஆராய்ச்சி கட்டுரைகள், விவசாயிகள் பற்றிய வழக்குக் கதைகள், கல்வி இணையதளங்கள் போன்றவற்றை பயன்படுத்தி அறிவியலையும் நிஜ வாழ்வு உதாரணங்களையும் புரிந்துகொண்டேன்.",
+
+      section3_title: "🖥️ டிஜிட்டல் மாதிரி அம்சங்கள்",
+      section3_card1_title: "Seed tools",
+      section3_card1_body:
+        "உதாரண விதைகளைப் பயிர் வகை, காலநிலை, குணாதிசயங்கள் ஆகியவற்றின்படி வடிகட்டி, இரண்டு விதைகளைப் பக்கமிட்டு ஒப்பிடக்கூடிய சிறிய இடைமுக கருவி.",
+      section3_card2_title: "Store locator",
+      section3_card2_body:
+        "ஹைதராபாத் பகுதியை மையமாகக் கொண்ட மாதிரி வரைபடம், விதை கடைகளின் எடுத்துக்காட்டு இடங்களை காட்டுகிறது – விவசாயிகள் அருகிலுள்ள விருப்பங்களை எவ்வாறு கண்டுபிடிப்பார்கள் என்பதை கற்பனை செய்ய இது உதவுகிறது.",
+      section3_card3_title: "பலமொழி உள்ளடக்கம்",
+      section3_card3_body:
+        "இந்த தளத்தை ஆங்கிலம், தெலுங்கு, தமிழுக்கு இடையில் மாற்ற முடியும்; இதனால் மேலும் பல மாணவர்கள் மற்றும் குடும்பங்கள் முக்கிய கருத்துகளைப் புரிந்துகொள்ள முடியும்.",
+
+      section4_title: "🧠 சிந்தனை / Reflection",
+      section4_p1:
+        "இந்த இணையதளத்தை உருவாக்கும் போது விதை பல்வகைமை எவ்வளவு சிக்கலானது என்பதை உணர்ந்தேன். இது வெறும் அறிவியல் தலைப்பு அல்ல; சமூக, கலாச்சாரம், பொருளாதாரம் ஆகியவற்றோடும் இணைந்துள்ளது.",
+      section4_p2:
+        "எதிர்காலத்தில் உண்மையான தரவுத்தொகுப்புகள், விவசாயிகளின் விரிவான சுயவிவரங்கள் மற்றும் கிராமப்புறங்களில் குறைந்த இணையத்துடனும் செயல்படக்கூடிய மேம்பட்ட முடிவு ஆதரவு கருவிகளைச் சேர்க்க விரும்புகிறேன்.",
+
+      footer_text: "விதை பல்வகைமை திட்டம் • பள்ளிக்காக உருவாக்கப்பட்டது • மாணவர் இணையதளம்"
+    }
+  };
+
+  const langButtons = document.querySelectorAll(".lang-btn");
+
+  function setLanguage(lang) {
+    document.documentElement.setAttribute("lang", lang);
+    langButtons.forEach(btn => {
+      btn.classList.toggle("lang-active", btn.dataset.lang === lang);
+    });
+
+    const dict = translations[lang];
+    Object.keys(dict).forEach(key => {
+      document.querySelectorAll(`[data-i18n="${key}"]`).forEach(el => {
+        el.textContent = dict[key];
+      });
+    });
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  });
+
+  setLanguage("en");
+</script>
 
 </body>
 </html>
