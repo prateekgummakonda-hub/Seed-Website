@@ -2,138 +2,252 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Seed Store Locator – Hyderabad Prototype</title>
-
-  <!-- Your main site styles -->
+  <title>Seed Store Locator – Prototype</title>
   <link rel="stylesheet" href="style.css" />
-
   <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
   <style>
-    .store-page-wrapper {
-      max-width: 960px;
-      margin: 40px auto;
-    }
-
-    .prototype-note {
-      padding: 12px 16px;
-      background: #f4fff3;
-      border-left: 4px solid #2e7d32;
-      border-radius: 8px;
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
-
     #map {
       width: 100%;
-      height: 500px;
-      border-radius: 12px;
-      background: #e9f3e6;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      height: 420px;
+      border-radius: 16px;
+      margin-top: 12px;
     }
   </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="brand">
-      <div class="brand-logo"></div>
-      <div class="brand-text">
-        <span>Seed Diversity</span>
-        <span>School Project Website</span>
-      </div>
-    </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="what-is-seed-diversity.html">What is it?</a>
-      <a href="why-it-matters.html">Why it matters</a>
-      <a href="threats.html">Threats</a>
-      <a href="how-we-can-help.html">Actions</a>
-      <a href="my-project.html">My project</a>
-      <a href="seed-tools.html">Seed tools</a>
-      <a href="store-locator.html" class="active">Store locator</a>
-    </nav>
-  </header>
 
-  <main class="store-page-wrapper">
-    <h1>Seed Store Locator (Hyderabad Prototype)</h1>
-    <p>
-      This page shows a <strong>prototype map</strong> of seed and agriculture stores
-      in Hyderabad. In a full system, this feature could include more cities, filters,
-      real-time inventory and more.
+<header class="navbar">
+  <div class="brand">
+    <div class="brand-logo">🌱</div>
+    <div class="brand-text">
+      <span data-i18n="site_title">Seed Diversity</span>
+      <span data-i18n="site_subtitle">School Project Website</span>
+    </div>
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="what-is-seed-diversity.html" data-i18n="nav_what">What is it?</a>
+    <a href="why-it-matters.html" data-i18n="nav_why">Why it matters</a>
+    <a href="threats.html" data-i18n="nav_threats">Threats</a>
+    <a href="how-we-can-help.html" data-i18n="nav_actions">Actions</a>
+    <a href="my-project.html" data-i18n="nav_project">My project</a>
+    <a href="seed-tools.html" data-i18n="nav_tools">Seed tools</a>
+    <a href="store-locator.html" class="active" data-i18n="nav_locator">Store locator</a>
+  </nav>
+
+  <div class="language-switch">
+    <span data-i18n="label_language">Language:</span>
+    <button class="lang-btn lang-active" data-lang="en">EN</button>
+    <span>/</span>
+    <button class="lang-btn" data-lang="te">TE</button>
+    <span>/</span>
+    <button class="lang-btn" data-lang="ta">TA</button>
+  </div>
+</header>
+
+<main class="wrapper">
+  <h1 class="page-title" data-i18n="title_locator">🗺️ Seed store locator – Hyderabad prototype</h1>
+  <p class="page-subtitle" data-i18n="subtitle_locator">
+    This map is a prototype focused only on the Hyderabad region. The store locations
+    are examples to show how a future tool could help farmers and gardeners find
+    nearby seed shops.
+  </p>
+
+  <div class="info-callout">
+    <strong data-i18n="locator_callout_title">Important note:</strong>
+    <p data-i18n="locator_callout_body">
+      Because this is a school project prototype, the map currently shows only a few
+      sample locations in and around Hyderabad. A real version would cover many more
+      districts and include real-time information from partners.
     </p>
+  </div>
 
-    <div class="prototype-note">
-      <strong>Prototype notice:</strong> This map only shows a
-      <strong>sample list of stores</strong> in the Hyderabad region for demonstration.
-      A full version would include other states, more seed types, and farmer-focused tools.
+  <section class="section">
+    <h2 data-i18n="map_section_title">🧭 Interactive map</h2>
+    <div class="card">
+      <p data-i18n="map_instructions">
+        Zoom in and click on the markers to see the name and a short description of
+        each sample store. Imagine how this could be expanded to cover more seed types,
+        organic shops and community seed banks.
+      </p>
+      <div id="map"></div>
     </div>
+  </section>
+</main>
 
-    <div id="map"></div>
-  </main>
+<footer>
+  <span data-i18n="footer_text">
+    Seed Diversity Project • Created for school • Student Website
+  </span>
+</footer>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<!-- Leaflet JS -->
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""
+></script>
 
-  <script>
-    const map = L.map("map").setView([17.3850, 78.4867], 12);
+<script>
+  // ---- Leaflet map setup for Hyderabad ----
+  const map = L.map("map").setView([17.3850, 78.4867], 11);
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: "&copy; OpenStreetMap contributors"
+  }).addTo(map);
 
-    const greenIcon = L.icon({
-      iconUrl:
-        "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png",
-      shadowUrl:
-        "https://unpkg.com/leaflet/dist/images/marker-shadow.png",
-      iconSize: [25, 41],
-      iconAnchor: [12, 41],
-      popupAnchor: [1, -34],
-      shadowSize: [41, 41]
+  const stores = [
+    {
+      name: "Green Fields Seed Centre",
+      lat: 17.4275,
+      lng: 78.4898,
+      desc: "Sample shop near central Hyderabad – focus on vegetable and pulse seeds."
+    },
+    {
+      name: "Deccan Agri Seeds",
+      lat: 17.3920,
+      lng: 78.4980,
+      desc: "Example agri-input store with cereals and oilseed varieties."
+    },
+    {
+      name: "Hyderabad Organic Seed Hub",
+      lat: 17.3616,
+      lng: 78.4747,
+      desc: "Prototype organic shop with millets and traditional rice varieties."
+    },
+    {
+      name: "Community Seed Corner",
+      lat: 17.4500,
+      lng: 78.4100,
+      desc: "Imagined community-based seed sharing point on the outskirts."
+    }
+  ];
+
+  stores.forEach(store => {
+    L.marker([store.lat, store.lng])
+      .addTo(map)
+      .bindPopup(
+        "<strong>" +
+          store.name +
+          "</strong><br/>" +
+          store.desc
+      );
+  });
+
+  // ---- Language system ----
+  const translations = {
+    en: {
+      site_title: "Seed Diversity",
+      site_subtitle: "School Project Website",
+      nav_home: "Home",
+      nav_what: "What is it?",
+      nav_why: "Why it matters",
+      nav_threats: "Threats",
+      nav_actions: "Actions",
+      nav_project: "My project",
+      nav_tools: "Seed tools",
+      nav_locator: "Store locator",
+      label_language: "Language:",
+
+      title_locator: "🗺️ Seed store locator – Hyderabad prototype",
+      subtitle_locator:
+        "This map is a prototype focused only on the Hyderabad region. The store locations are examples to show how a future tool could help farmers and gardeners find nearby seed shops.",
+      locator_callout_title: "Important note:",
+      locator_callout_body:
+        "Because this is a school project prototype, the map currently shows only a few sample locations in and around Hyderabad. A real version would cover many more districts and include real-time information from partners.",
+
+      map_section_title: "🧭 Interactive map",
+      map_instructions:
+        "Zoom in and click on the markers to see the name and a short description of each sample store. Imagine how this could be expanded to cover more seed types, organic shops and community seed banks.",
+
+      footer_text: "Seed Diversity Project • Created for school • Student Website"
+    },
+
+    te: {
+      site_title: "విత్తన వైవిధ్యం",
+      site_subtitle: "పాఠశాల ప్రాజెక్ట్ వెబ్‌సైట్",
+      nav_home: "మొదటి పేజీ",
+      nav_what: "ఏమిటి?",
+      nav_why: "ఎందుకు ముఖ్యం?",
+      nav_threats: "ముప్పులు",
+      nav_actions: "చర్యలు",
+      nav_project: "నా ప్రాజెక్ట్",
+      nav_tools: "విత్తన సాధనాలు",
+      nav_locator: "దుకాణ మ్యాప్",
+      label_language: "భాష:",
+
+      title_locator: "🗺️ విత్తన దుకాణ మ్యాప్ – హైదరాబాద్ ప్రోటోటైప్",
+      subtitle_locator:
+        "ఈ మ్యాప్ ప్రస్తుతం హైదరాబాద్ ప్రాంతంపై בלבד దృష్టి పెట్టిన ప్రోటోటైప్. ఇక్కడ చూపిన దుకాణాలు ఉదాహరణలు మాత్రమే; భవిష్యత్తులో రైతులు, గార్డెనర్లు సమీప విత్తన దుకాణాలను కనుగొనే సాధనంగా విస్తరించవచ్చు.",
+      locator_callout_title: "ముఖ్య గమనిక:",
+      locator_callout_body:
+        "ఇది పాఠశాల ప్రాజెక్ట్ ప్రోటోటైప్ కాబట్టి, మ్యాప్‌లో ప్రస్తుతం హైదరాబాద్ లోపల, చుట్టుపక్కల కొద్దిమంది నమూనా లొకేషన్‌లు మాత్రమే ఉన్నాయి. నిజమైన వెర్షన్‌లో మరిన్ని జిల్లాలు, భాగస్వాముల నుండి వచ్చే రియల్-టైమ్ సమాచారం ఉంటుంది.",
+
+      map_section_title: "🧭 ఇంటరాక్టివ్ మ్యాప్",
+      map_instructions:
+        "మ్యాప్‌ను జూమ్ చేసి, ప్రతీ మార్కర్‌పై క్లిక్ చేసి దుకాణం పేరును, చిన్న వివరణను చూడండి. దీన్ని మరిన్ని విత్తన రకాలు, ఆర్గానిక్ షాపులు, కమ్యూనిటీ సీడ్ బ్యాంక్స్‌వరకు ఎలా విస్తరించవచ్చో ఊహించండి.",
+
+      footer_text: "విత్తన వైవిధ్య ప్రాజెక్ట్ • పాఠశాల కోసం రూపొందించబడింది • విద్యార్థి వెబ్‌సైట్"
+    },
+
+    ta: {
+      site_title: "விதை பல்வகைமை",
+      site_subtitle: "பள்ளி திட்ட இணையதளம்",
+      nav_home: "முதல் பக்கம்",
+      nav_what: "என்னது?",
+      nav_why: "ஏன் முக்கியம்?",
+      nav_threats: "அபாயங்கள்",
+      nav_actions: "நடவடிக்கைகள்",
+      nav_project: "என் திட்டம்",
+      nav_tools: "விதை கருவிகள்",
+      nav_locator: "கடை வரைபடம்",
+      label_language: "மொழி:",
+
+      title_locator: "🗺️ விதை கடை வரைபடம் – ஹைதராபாத் மாதிரி",
+      subtitle_locator:
+        "இந்த வரைபடம் தற்போது ஹைதராபாத் பகுதியை மட்டுமே மையமாகக் கொண்ட மாதிரி. காட்டப்படும் கடை இடங்கள் எடுத்துக்காட்டு மட்டுமே; எதிர்காலத்தில் விவசாயிகளும் தோட்டக்காரர்களும் அருகிலுள்ள விதை கடைகளைத் தேட உதவும் உண்மையான கருவியாக இது விரிவடையலாம்.",
+      locator_callout_title: "முக்கிய குறிப்பு:",
+      locator_callout_body:
+        "இது ஒரு பள்ளித் திட்ட மாதிரி என்பதால், தற்போது வரைபடத்தில் ஹைதராபாத் மற்றும் அதைச் சுற்றியுள்ள சில எடுத்துக்காட்டு இடங்களே உள்ளன. ஒரு உண்மையான பதிப்பு பல மாவட்டங்களை உள்ளடக்கி, கூட்டாளர்களிடமிருந்து நேரடி தகவலையும் பெறும்.",
+
+      map_section_title: "🧭 இடைமுக வரைபடம்",
+      map_instructions:
+        "வரைபடத்தை பெரிதாக்கி (zoom) ஒவ்வொரு குறியீட்டிலும் (marker) சொடுக்கி அந்த கடையின் பெயரையும் சுருக்கமான விளக்கத்தையும் பாருங்கள். இதை எப்படி மேலும் பல விதை வகைகள், இயற்கை (organic) கடைகள் மற்றும் சமூக விதை வங்கிகளை உள்ளடக்க விரிவாக்கலாம் என்று கற்பனை செய்யுங்கள்.",
+
+      footer_text: "விதை பல்வகைமை திட்டம் • பள்ளிக்காக உருவாக்கப்பட்டது • மாணவர் இணையதளம்"
+    }
+  };
+
+  const langButtons = document.querySelectorAll(".lang-btn");
+
+  function setLanguage(lang) {
+    document.documentElement.setAttribute("lang", lang);
+    langButtons.forEach(btn => {
+      btn.classList.toggle("lang-active", btn.dataset.lang === lang);
     });
 
-    const stores = [
-      {
-        name: "Hyderabad Seeds & Fertilizers",
-        area: "Abids",
-        lat: 17.392,
-        lng: 78.486,
-        seeds: "Cereals, pulses, vegetable seeds"
-      },
-      {
-        name: "GreenGrow Seed House",
-        area: "Koti",
-        lat: 17.408,
-        lng: 78.501,
-        seeds: "Leafy greens, herbs, kitchen-garden packs"
-      },
-      {
-        name: "Andhra Seed Company",
-        area: "Nampally",
-        lat: 17.378,
-        lng: 78.472,
-        seeds: "Hybrids, millets, oilseeds"
-      },
-      {
-        name: "UrbanAgri Store",
-        area: "Secunderabad",
-        lat: 17.443,
-        lng: 78.498,
-        seeds: "Organic seeds, balcony-gardening kits"
-      }
-    ];
-
-    stores.forEach(store => {
-      L.marker([store.lat, store.lng], { icon: greenIcon })
-        .addTo(map)
-        .bindPopup(
-          `<strong>${store.name}</strong><br>` +
-          `Area: ${store.area}<br>` +
-          `Seeds: ${store.seeds}`
-        );
+    const dict = translations[lang];
+    Object.keys(dict).forEach(key => {
+      document.querySelectorAll(`[data-i18n="${key}"]`).forEach(el => {
+        el.textContent = dict[key];
+      });
     });
-  </script>
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  });
+
+  setLanguage("en");
+</script>
+
 </body>
 </html>
